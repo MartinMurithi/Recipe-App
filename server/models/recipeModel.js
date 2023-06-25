@@ -10,6 +10,18 @@ const recipeSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    servings: {
+      type: String,
+      required: true
+    },
+    prepTime: {
+      type: String,
+      required: true
+    },
+    totalTime: {
+      type: String,
+      required: true
+    },
     ingridients: {
       type: Array,
       required: [ true, "The ingridients are required" ]
