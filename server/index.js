@@ -19,7 +19,6 @@ app.use(cors());
 app.use("/", express.static(path.join(__dirname, 'public')));
 app.use("/", router);
 
-
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
@@ -35,7 +34,7 @@ app.use(errorHandler);
 
 // listen to db connection
 mongoose.connection.once("open", () => {
-  console.log("Database connected successfully");
+    console.log("Database connected successfully");
   app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 });
 
