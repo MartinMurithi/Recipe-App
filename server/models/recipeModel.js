@@ -12,9 +12,9 @@ const recipeSchema = mongoose.Schema(
     },
     ingridients: {
       type: Array,
-      required: true,
+      required: [ true, "The ingridients are required" ]
     },
-    instruction: {
+    instructions: {
       type: Array,
       required: true,
     },
@@ -25,10 +25,10 @@ const recipeSchema = mongoose.Schema(
     category: {
       type: String,
       required: true,
-    },
+    }
   },
   { timestamps: true }
 );
 
-const recipeModel = mongoose.model("recipes", recipeSchema);
+const recipeModel = mongoose.model("recipe", recipeSchema);
 module.exports = recipeModel;
