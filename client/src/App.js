@@ -7,11 +7,14 @@ import AddRecipe from "./pages/AddRecipe";
 import Contacts from "./pages/Contacts";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-
+import RecipeItem from './components/recipeItem/RecipeItem';
 function App() {
+
+
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
+      <RecipeItem/>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/recipes' element={<Recipes/>} />
