@@ -1,10 +1,12 @@
 import React from 'react'
-import WelcomePage from '../components/main/WelcomePage';
+import HeaderSection from '../components/header/HeaderSection';
+import SearchBar from '../components/searchBar/SearchBar';
 
 function Home() {
   return (
     <div>
-      <WelcomePage/>
+      <HeaderSection />
+      <SearchBar/>
     </div>
   )
 }

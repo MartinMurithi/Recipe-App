@@ -1,9 +1,9 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import "./WelcomePage.css";
+import "./HeaderSection.css";
 
-function WelcomePage() {
+function HeaderSection() {
   return (
     <div className="welcomeSection">
       <h1 className="welcomeDescription">
@@ -23,4 +23,4 @@ function WelcomePage() {
   );
 }
 
-export default WelcomePage;
+export default HeaderSection;

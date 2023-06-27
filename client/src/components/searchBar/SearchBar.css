@@ -1,0 +1,44 @@
+.search_sort{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchInput{
+    width: 900px;
+    margin: 50px 0 50px 5px;
+    padding: 15px 15px;
+    border-radius: 5px;
+    outline: transparent;
+    border-style: none;
+    background-color: #d4d4d4;
+}
+
+.searchInput::placeholder{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+.searchInput:focus{
+    border: 1px solid #000000;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.dropDown{
+    background-color: #EB4A36;
+    color: whitesmoke;
+    font-size: .9rem;
+    margin: 50px 5px;
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+
+select, option{
+    background-color: #EB4A36;
+    color: whitesmoke;
+    border-style: none;
+    outline: transparent;
+    cursor: pointer;
+}
