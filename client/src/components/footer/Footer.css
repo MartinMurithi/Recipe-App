@@ -1,0 +1,82 @@
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerSocials{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerRight{
+    font-family: cursive;
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #EB5343;
+}
+
+.footerLeft{
+    margin-right: 5px;
+}
+
+.socialIcon{
+    margin-left: 20px;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+#faceBook{
+    color: blue;
+}
+#ig{
+    color: #E05584;
+}
+#twitter{
+    color: #0EB1EF;
+}
+
+#gitHub{
+    color: black;
+}
+
+.footerLinks{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 90%;
+}
+
+.footerSectionOne,
+.footerSectionTwo,
+.footerSectionThree,
+.footerSectionFour{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footerItem{
+    text-decoration: none;
+    color: #787878;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+}
+
+.authorName{
+    text-decoration: none;
+    color: #4A4A4A;
+    font-size: 1rem;
+    line-height: 21px;
+    font-weight: 500;
+    margin: 30px 0 50px 0;
+}
+
+.authorLink{
+    text-decoration: none;
+    margin-left: 10px;
+    color: #4A4A4A;
+}
