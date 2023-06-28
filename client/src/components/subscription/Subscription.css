@@ -1,0 +1,45 @@
+.subscriptionSection{
+    height: 50vh;
+    background-color: #EB4A36;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-radius: 30px;
+}
+
+.subscriptionText{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 39px;
+}
+
+.emailSubscription{
+    width: 500px;
+    margin-top: 40px;
+    padding: 15px 0 15px 20px;
+    border: 2px solid white;
+    border-radius: 30px;
+    outline: transparent;
+    font-size: .8rem;
+    background-color: transparent;
+    color: whitesmoke;
+
+}
+
+.emailSubscription::placeholder{
+    color: whitesmoke;
+}
+
+.subscriptionBtn{
+    background-color: #FBC418;
+    margin-left: 20px;
+    padding: 15px 40px;
+    outline: transparent;
+    border-style: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
