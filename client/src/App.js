@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Search from './pages/Search';
 function App() {
+  // SIGN UP AND SIGN FORM USE THE SAME CSS
   return (
     <div className="App">
       <Nav />
