@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Nav.css";
+import Logo from "../logo/Logo";
 
 function Nav() {
   const navigate = useNavigate();
@@ -9,11 +10,8 @@ function Nav() {
     <>
       <nav>
         <div className="leftSide">
-          <div>
-            <NavLink to={"/"} className="logo">
-              Kocima
-            </NavLink>{" "}
-          </div>
+          <Logo />
+
           <div className="navLinks">
             <NavLink to={"/"} className={"navLink"}>
               Home
@@ -34,7 +32,9 @@ function Nav() {
           <NavLink to={"/signIn"} className={"navLink"}>
             Sign In
           </NavLink>
-          <button className="signUpBtn" onClick={()=>navigate("/signUp")}>Sign Up</button>
+          <button className="signUpBtn" onClick={() => navigate("/signUp")}>
+            Sign Up
+          </button>
         </div>
       </nav>
     </>

@@ -15,11 +15,11 @@ function ContactSection() {
           <div className="contactFormSection">
               <form action="" className='contactForm'>
                   <label htmlFor="name" className='contactFormLabel'>Name</label>
-                  <input type="text" name="name" id="name" />
+                  <input type="text" name="name" id="name" required />
                   <label htmlFor="email" className='contactFormLabel'>Email</label>
-                  <input type="email" name="email" id="email" />
+                  <input type="email" name="email" id="email"  required/>
                   <label htmlFor="message" className='contactFormLabel'>Message</label>
-                  <textarea name="nessage" id="message" cols="30" rows="5"></textarea>
+                  <textarea name="nessage" id="message" cols="30" rows="8" required></textarea>
                   <button className='sendMessageBtn'>Send Message</button>
               </form>
           </div>

@@ -9,7 +9,7 @@ function HeaderSection() {
       <h1 className="welcomeDescription">
         Choose from <br /> thousands of <br /> recipes
       </h1>
-      <p className="welcomeText">
+      <p className="welcomeHeaderText">
         "Discover a Treasure Trove of Culinary Creations: Our Recipe Haven
         <br />
         Awaits, Where Every Dish is an Epicurean Symphony of Flavors and
