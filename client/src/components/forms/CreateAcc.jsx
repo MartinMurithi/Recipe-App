@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../logo/Logo";
-import "./Sign.css";
+import Form from "./Form";
+
 
 function CreateAcc() {
   const navigate = useNavigate();
@@ -13,40 +14,7 @@ function CreateAcc() {
         </div>
 
         <p className="createAcc">Create an Account</p>
-        <form action="" className="signUpForm">
-          <label htmlFor="userName" className="registerLabels">
-            Full name
-          </label>
-          <input
-            type="text"
-            placeholder="Ramsey Gordon"
-            className="registerInput"
-            id="userName"
-            required
-          />
-          <label htmlFor="userEmail" className="registerLabels">
-            Email
-          </label>
-          <input
-            type="email"
-            placeholder="gordon@company.com"
-            className="registerInput"
-            id="userEmail"
-            required
-          />
-          <label htmlFor="password" className="registerLabels">
-            Password
-          </label>
-          <input
-            type="password"
-            placeholder="Min 8 characters"
-            minLength={8}
-            id="password"
-            className="registerInput"
-            required
-          />
-          <button className="signUpBtn">Sign Up</button>
-        </form>
+        <Form/>
         <p className="terms_conditions">
           By signing up you agree to our <span className="terms">terms</span> of
           service.
