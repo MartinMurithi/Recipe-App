@@ -1,0 +1,116 @@
+.signUp_signInSection {
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+}
+
+.signUpSection {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.logoComponent {
+  text-align: center;
+}
+
+.createAcc {
+  font-size: 1.5rem;
+  line-height: 39px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registerLabels {
+  color: #333333;
+  font-size: 0.8rem;
+  line-height: 21px;
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+.registerInput {
+  width: 70%;
+  border-style: none;
+  border: 2px solid #eaecf0;
+  border-radius: 20px;
+  outline: transparent;
+  padding: 12px 5px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.registerInput:focus {
+  border: 2px solid #eb4a36;
+}
+
+.signUpBtn {
+  background-color: #eb4a36;
+  display: block;
+  margin: 30px auto;
+  padding: 14px 0px;
+  width: 30%;
+  outline: transparent;
+  border-style: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.terms_conditions {
+  font-size: 0.9rem;
+  color: #a4a4a4;
+  line-height: 21px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.terms {
+  color: #eb4a36;
+}
+
+/* Login Bcg Image section */
+.loginLinkSection {
+  width: 70%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 80px 0;
+  background: url("../../images/vitor-monthay-2OX0bKvL1-I-unsplash223.jpg") no-repeat;
+  background-size: cover;
+  filter: brightness(90%);
+  margin-right: 30px;
+  border-radius: 30px;
+}
+
+.welcomeText{
+    font-size: 1.6rem;
+    line-height: 39px;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.loginText{
+    color: whitesmoke;
+    font-size: 1.1rem;
+    line-height: 24px;
+    font-weight: 600;
+    
+}
+
+.signInLinkBtn{
+    margin-top: 20px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border-style: none;
+    outline: transparent;
+    cursor: pointer;
+}

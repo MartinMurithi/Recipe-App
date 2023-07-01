@@ -7,10 +7,7 @@ import Contacts from "./pages/Contacts";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Search from './pages/Search';
-import Footer from './components/footer/Footer';
 function App() {
-
-
   return (
     <div className="App">
       <Nav />
@@ -22,7 +19,6 @@ function App() {
         <Route path='/signUp' element={<SignUp/> } />
         <Route path='/signIn' element={<SignIn/> } />
       </Routes>
-      <Footer/>
     </div>
   );
 }

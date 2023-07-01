@@ -1,5 +1,4 @@
 nav{
-    /* background-color: green; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,16 +12,6 @@ nav{
     justify-content: space-evenly;
     gap: 75px;
 }
-
-.logo{
-    color: #EB4A36;
-    font-family: cursive;
-    font-size: 28px;
-    line-height: 38px;
-    font-weight: 400;
-    text-decoration: none;
-}
-
 
 .navLink{
     text-decoration: none;
@@ -45,7 +34,8 @@ nav{
 .rightSide{
     display: flex;
     align-items: center;
-    gap: 15px;
+    width: 250px;
+    margin-right: -30px;
 }
 
 .signUpBtn{
