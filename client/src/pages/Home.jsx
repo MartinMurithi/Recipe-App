@@ -12,7 +12,6 @@ function Home() {
       <SearchBar />
       <RecipeList/>
       <Subscription />
-      <Footer/>
     </div>
   )
 }
