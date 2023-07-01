@@ -4,6 +4,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 15vh;
+    margin-bottom: -30px;
 }
 
 .leftSide{
@@ -55,4 +56,5 @@ nav{
     border-radius: 25px;
     font-size: 12px;
     font-weight: 500;
+    cursor: pointer;
 }

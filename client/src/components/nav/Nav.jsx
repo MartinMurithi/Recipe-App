@@ -18,8 +18,8 @@ function Nav() {
             <NavLink to={"/"} className={"navLink"}>
               Home
             </NavLink>
-            <NavLink to={"/recipes"} className={"navLink"}>
-              Recipes
+            <NavLink to={"/search"} className={"navLink"}>
+              Search
             </NavLink>
             <NavLink to={"/addRecipe"} className={"navLink"}>
               Add Recipe
@@ -34,7 +34,7 @@ function Nav() {
           <NavLink to={"/signIn"} className={"navLink"}>
             Sign In
           </NavLink>
-          <button className="signUpBtn">Sign Up</button>
+          <button className="signUpBtn" onClick={()=>navigate("/signUp")}>Sign Up</button>
         </div>
       </nav>
     </>
