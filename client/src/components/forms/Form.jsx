@@ -6,7 +6,7 @@ function Form() {
     <div>
       <form action="" className="signUpForm">
         <label htmlFor="userName" className="registerLabels">
-          Full name
+          Full name <span className="mandatory">*</span>
         </label>
         <input
           type="text"
@@ -16,7 +16,7 @@ function Form() {
           required
         />
         <label htmlFor="userEmail" className="registerLabels">
-          Email
+          Email <span className="mandatory">*</span>
         </label>
         <input
           type="email"
@@ -26,7 +26,7 @@ function Form() {
           required
         />
         <label htmlFor="password" className="registerLabels">
-          Password
+          Password <span className="mandatory">*</span>
         </label>
         <input
           type="password"
