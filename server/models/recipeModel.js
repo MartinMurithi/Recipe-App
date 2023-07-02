@@ -34,7 +34,7 @@ const recipeSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    category: {
+    mealType: {
       type: String,
       required: true,
     }

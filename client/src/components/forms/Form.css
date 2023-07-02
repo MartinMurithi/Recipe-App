@@ -115,3 +115,9 @@
     outline: transparent;
     cursor: pointer;
 }
+
+.mandatory{
+  color: red;
+  font-weight: 500;
+  font-size: 15px;
+}
