@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../logo/Logo";
-import Form from "./Form";
+import "./Form.css";
+
 function LogIn() {
   const navigate = useNavigate();
   return (
@@ -12,7 +13,41 @@ function LogIn() {
         </div>
 
         <p className="createAcc">Sign In to Kocima</p>
-        <Form />
+      
+      <form action="" className="signUpForm">
+        {/* <label htmlFor="userName" className="registerLabels">
+          Full name <span className="mandatory">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Ramsey Gordon"
+          className="registerInput"
+          id="userName"
+          required
+        /> */}
+        <label htmlFor="userEmail" className="registerLabels">
+          Email <span className="mandatory">*</span>
+        </label>
+        <input
+          type="email"
+          placeholder="gordon@company.com"
+          className="registerInput"
+          id="userEmail"
+          required
+        />
+        <label htmlFor="password" className="registerLabels">
+          Password <span className="mandatory">*</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Min 8 characters"
+          minLength={8}
+          id="password"
+          className="registerInput"
+          required
+        />
+        <button className="signUpBtn">Sign In</button>
+      </form>
         <p className="terms_conditions">
           By signing up you agree to our <span className="terms">terms</span> of
           service.
