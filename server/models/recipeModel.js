@@ -11,11 +11,11 @@ const recipeSchema = mongoose.Schema(
       required: true,
     },
     servings: {
-      type: String,
+      type: Number,
       required: true
     },
     totalTime: {
-      type: String,
+      type: Number,
       required: true
     },
     ingridients: {

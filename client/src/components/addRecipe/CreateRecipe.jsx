@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CreateRecipe.css";
+import axios from "axios";
 
 function CreateRecipe() {
+  const [title, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [mealType, setMealType] = useState("");
+  const [ingridients, setIngridients] = useState([]);
+  const [instructions, setInstructions] = useState([]);
+  const [servings, setServings] = useState(0);
+  const [totalTime, setTime] = useState(0);
+  const [imageURL, setUrl] = useState("");
+
+  const createRecipe = async (e) => {
+    try {
+      e.preventDefault();
+      const obj = await axios.post("http://localhost:8080/kocima.com/api/createRecipe", {
+        title,
+        description,
+        mealType,
+        ingridients,
+        instructions,
+        servings,
+        totalTime,
+        imageURL,
+      });
+      console.log(obj);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+        console.log(title, imageURL, servings, mealType);
+
+
   return (
     <div className="addRecipeSection">
       <h3 className="pageIntro">
@@ -42,17 +73,21 @@ function CreateRecipe() {
             servings]
           </li>
 
-          {/* <li className="instruction">
+          <li className="instruction">
             By adhering to these instructions, you can ensure that your recipe
             will be easy to follow and understand.
-          </li> */}
+          </li>
         </ul>
       </section>
 
       <section className="recipeInputSection">
-        <form action="" method="post">
-          <label htmlFor="recipeName" className="recipeInputs">
-            Name
+        <form onSubmit={createRecipe} className="recipeForm">
+          <label
+            htmlFor="recipeName"
+            className="recipeLabels
+          "
+          >
+            Recipe name
           </label>
           <input
             type="text"
@@ -61,18 +96,32 @@ function CreateRecipe() {
             placeholder="e.g Grilled chicken"
             id="recipeName"
             className="recipeInput"
+            onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor="recipeDescription" className="recipeInputs">
+          <label
+            htmlFor="recipeDescription"
+            className="recipeLabels
+          "
+          >
             Description
           </label>
           <textarea
             name="description"
             id="recipeDesc"
+            className="recipeInput"
             cols="30"
             rows="10"
+            onChange={(e) => setDescription(e.target.value)}
           ></textarea>
-          <label htmlFor="mealType">Meal Type</label>
-          <select name="mealType" id="mealTypeSelect">
+          <label htmlFor="mealType" className="recipeLabels">
+            Meal type
+          </label>
+          <select
+            name="mealType"
+            id="mealTypeSelect"
+            className="recipeInput"
+            onChange={(e) => setMealType(e.target.value)}
+          >
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>
@@ -80,43 +129,95 @@ function CreateRecipe() {
             <option value="party">Party</option>
             <option value="wine">Wine</option>
           </select>
-          <label htmlFor="time" className="recipeInputs">
-            Total Time Taken
+          <label
+            htmlFor="time"
+            className="recipeLabels
+          "
+          >
+            Total time taken
           </label>
           <input
             type="text"
             placeholder="E.g 3 hours"
             required
-            name="time"
+            name="totalTime"
             className="recipeInput"
+            id="timeInput"
+            onChange={(e) => setTime(e.target.value)}
           />
-          <label htmlFor="ingridients" className="recipeInputs">
+          <label
+            htmlFor="ingridients"
+            className="recipeLabels
+          "
+          >
             Ingridients
           </label>
           <input
             type="text"
             placeholder="eggs"
             required
-            name="recipe"
+            name="ingridients"
             className="recipeInput"
+            id="ingridientsInput"
+            onChange={(e) => setIngridients(e.target.value)}
           />
           <input
             type="text"
             placeholder="water"
             required
-            name="recipe"
+            name="ingridients"
+            id="ingridientsInput"
             className="recipeInput"
+            onChange={(e) => setIngridients(e.target.value)}
           />
           <button className="newInput">Add Ingridient</button>
 
-          <label htmlFor="instructions" className="recipeInputs">Instructions</label>
-          <textarea name="instructions" id="instructions" cols="30" rows="10"></textarea>
+          <label
+            htmlFor="instructions"
+            className="recipeLabels
+          "
+          >
+            Instructions
+          </label>
+          <textarea
+            name="instructions"
+            id="instructions"
+            className="recipeInput"
+            cols="30"
+            rows="10"
+            onChange={(e) => setInstructions(e.target.value)}
+          ></textarea>
 
-          <label htmlFor="servings" className="recipeInputs">Servings</label>
-          <input type="number" name="servings" id="servings" required />
+          <label
+            htmlFor="servings"
+            className="recipeLabels
+          "
+          >
+            Servings
+          </label>
+          <input
+            type="text"
+            name="servings"
+            id="servingsInput"
+            className="recipeInput"
+            required
+            onChange={(e) => setServings(e.target.value)}
+          />
 
-          <label htmlFor="imgURL" className="recipeInputs">Image URL</label>
-          <input type="url" name="imageURL" id="imgUrl" />
+          <label
+            htmlFor="imgURL"
+            className="recipeLabels
+          "
+          >
+            Image URL
+          </label>
+          <input
+            type="url"
+            name="imageURL"
+            id="imgUrl"
+            className="recipeInput"
+            onChange={(e) => setUrl(e.target.value)}
+          />
           <button className="submitRecipeBtn">Submit</button>
         </form>
       </section>
