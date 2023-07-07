@@ -14,10 +14,6 @@ const recipeSchema = mongoose.Schema(
       type: String,
       required: true
     },
-    prepTime: {
-      type: String,
-      required: true
-    },
     totalTime: {
       type: String,
       required: true
