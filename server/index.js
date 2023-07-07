@@ -14,8 +14,11 @@ const PORT = process.env.PORT || 8500;
 dbConnect();
 
 app.use(logger);
-app.use(express.json());
+app.use(
+    express.urlencoded({ extended: true })
+);
 app.use(cors());
+app.use(express.json());
 app.use("/", express.static(path.join(__dirname, 'public')));
 app.use("/", router);
 
