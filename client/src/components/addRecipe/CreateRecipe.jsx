@@ -1,37 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CreateRecipe.css";
 import axios from "axios";
 
 function CreateRecipe() {
-  const [title, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [mealType, setMealType] = useState("");
-  const [ingridients, setIngridients] = useState([]);
-  const [instructions, setInstructions] = useState([]);
-  const [servings, setServings] = useState(0);
-  const [totalTime, setTime] = useState(0);
-  const [imageURL, setUrl] = useState("");
+
+  const [recipe, setRecipe] = useState({
+    title: "",
+    description: "",
+    mealType: "",
+    ingridients: "",
+    instructions: "",
+    servings: 0,
+    totalTime: 0,
+    imageURL: ""
+  });
+
+
+  const [data, setData] = useState([]);
 
   const createRecipe = async (e) => {
     try {
       e.preventDefault();
-      const obj = await axios.post("http://localhost:8080/kocima.com/api/createRecipe", {
-        title,
-        description,
-        mealType,
-        ingridients,
-        instructions,
-        servings,
-        totalTime,
-        imageURL,
-      });
+      const obj = await axios.post(
+        "http://localhost:8080/kocima.com/api/createRecipe",
+        {
+          title: recipe.title,
+          description: recipe.description,
+          mealType: recipe.mealType,
+          ingridients: recipe.ingridients,
+          instructions: recipe.instructions,
+          servings: recipe.servings,
+          totalTime: recipe.totalTime,
+          imageURL: recipe.imageURL,
+        }
+      );
       console.log(obj);
     } catch (err) {
       console.log(err);
     }
   };
-        console.log(title, imageURL, servings, mealType);
 
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await axios.get(
+        "http://localhost:8080/kocima.com/api/recipes"
+      );
+      const datap = res.data;
+      setData(datap);
+    };
+    fetch();
+  }, []);
+  console.log(data);
 
   return (
     <div className="addRecipeSection">
@@ -96,7 +115,7 @@ function CreateRecipe() {
             placeholder="e.g Grilled chicken"
             id="recipeName"
             className="recipeInput"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setRecipe({ ...recipe, title: e.target.value })}
           />
           <label
             htmlFor="recipeDescription"
@@ -111,7 +130,7 @@ function CreateRecipe() {
             className="recipeInput"
             cols="30"
             rows="10"
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e) => setRecipe({ ...recipe, description: e.target.value})}
           ></textarea>
           <label htmlFor="mealType" className="recipeLabels">
             Meal type
@@ -120,7 +139,7 @@ function CreateRecipe() {
             name="mealType"
             id="mealTypeSelect"
             className="recipeInput"
-            onChange={(e) => setMealType(e.target.value)}
+            onChange={(e) => setRecipe({ ...recipe, mealType: e.target.value})}
           >
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
@@ -137,13 +156,13 @@ function CreateRecipe() {
             Total time taken
           </label>
           <input
-            type="text"
+            type="number"
             placeholder="E.g 3 hours"
             required
             name="totalTime"
             className="recipeInput"
             id="timeInput"
-            onChange={(e) => setTime(e.target.value)}
+            onChange={(e) => setRecipe({ ...recipe, totalTime: e.target.value})}
           />
           <label
             htmlFor="ingridients"
@@ -152,25 +171,14 @@ function CreateRecipe() {
           >
             Ingridients
           </label>
-          <input
-            type="text"
-            placeholder="eggs"
-            required
+          <textarea
             name="ingridients"
+            id="ingridients"
             className="recipeInput"
-            id="ingridientsInput"
-            onChange={(e) => setIngridients(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="water"
-            required
-            name="ingridients"
-            id="ingridientsInput"
-            className="recipeInput"
-            onChange={(e) => setIngridients(e.target.value)}
-          />
-          <button className="newInput">Add Ingridient</button>
+            cols="30"
+            rows="10"
+            onChange={(e) => setRecipe({ ...recipe, ingridients: e.target.value})}
+          ></textarea>
 
           <label
             htmlFor="instructions"
@@ -185,7 +193,7 @@ function CreateRecipe() {
             className="recipeInput"
             cols="30"
             rows="10"
-            onChange={(e) => setInstructions(e.target.value)}
+            onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value})}
           ></textarea>
 
           <label
@@ -196,12 +204,12 @@ function CreateRecipe() {
             Servings
           </label>
           <input
-            type="text"
+            type="number"
             name="servings"
             id="servingsInput"
             className="recipeInput"
             required
-            onChange={(e) => setServings(e.target.value)}
+            onChange={(e) => setRecipe({ ...recipe, servings: e.target.value})}
           />
 
           <label
@@ -216,7 +224,7 @@ function CreateRecipe() {
             name="imageURL"
             id="imgUrl"
             className="recipeInput"
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={(e) => setRecipe({ ...recipe, imageURL: e.target.value})}
           />
           <button className="submitRecipeBtn">Submit</button>
         </form>

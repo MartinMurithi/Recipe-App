@@ -19,11 +19,11 @@ const recipeSchema = mongoose.Schema(
       required: true
     },
     ingridients: {
-      type: Array,
+      type: String,
       required: [ true, "The ingridients are required" ]
     },
     instructions: {
-      type: Array,
+      type: String,
       required: true,
     },
     imageURL: {
