@@ -58,6 +58,10 @@ li{
     margin-top: 3px;
 }
 
+#mealTypeSelect{
+    padding: 7px 3px;
+}
+
 #recipeName,
 #timeInput,
 #ingridientsInput,
@@ -69,8 +73,20 @@ li{
 }
 
 #instructions,
-#recipeDesc{
+#recipeDesc,
+#ingridients{
     padding: 5px 10px;
+    outline: transparent;   
+}
+
+.submitRecipeBtn{
+    width: 10%;
+    padding: 10px 0;
+    background-color: #eb4a36;
+    border-style: none;
     outline: transparent;
-    
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
 }
