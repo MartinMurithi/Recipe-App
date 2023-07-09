@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./CreateRecipe.css";
-import axios from "axios";
 
 function CreateRecipe() {
 
@@ -14,43 +13,6 @@ function CreateRecipe() {
     totalTime: 0,
     imageURL: ""
   });
-
-
-  const [data, setData] = useState([]);
-
-  const createRecipe = async (e) => {
-    try {
-      e.preventDefault();
-      const obj = await axios.post(
-        "http://localhost:8080/kocima.com/api/createRecipe",
-        {
-          title: recipe.title,
-          description: recipe.description,
-          mealType: recipe.mealType,
-          ingridients: recipe.ingridients,
-          instructions: recipe.instructions,
-          servings: recipe.servings,
-          totalTime: recipe.totalTime,
-          imageURL: recipe.imageURL,
-        }
-      );
-      console.log(obj);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    const fetch = async () => {
-      const res = await axios.get(
-        "http://localhost:8080/kocima.com/api/recipes"
-      );
-      const datap = res.data;
-      setData(datap);
-    };
-    fetch();
-  }, []);
-  console.log(data);
 
   return (
     <div className="addRecipeSection">
@@ -100,7 +62,7 @@ function CreateRecipe() {
       </section>
 
       <section className="recipeInputSection">
-        <form onSubmit={createRecipe} className="recipeForm">
+        <form className="recipeForm">
           <label
             htmlFor="recipeName"
             className="recipeLabels
