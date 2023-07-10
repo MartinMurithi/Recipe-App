@@ -9,7 +9,7 @@ export const apiSlice = createApi({
   endpoints: (builder) => ({
     getRecipes: builder.query({
       query: () => "/recipes",
-    //   transformResponse : (response) => response.sort((a, b)=> b.id - a.id),
+      // transformResponse : (response) => response.sort(),
       providesTags: ["Recipes"],
     }),
     getRecipe: builder.query({
