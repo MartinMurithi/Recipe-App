@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCreateRecipeMutation } from "../../features/api/apiSlice";
 import "./CreateRecipe.css";
-import axios from "axios";
 
 function CreateRecipe() {
-
+  const navigate = useNavigate();
   const [recipe, setRecipe] = useState({
     title: "",
     description: "",
@@ -12,45 +13,26 @@ function CreateRecipe() {
     instructions: "",
     servings: 0,
     totalTime: 0,
-    imageURL: ""
+    imageURL: "",
   });
 
+  const [createHandler] = useCreateRecipeMutation();
 
-  const [data, setData] = useState([]);
-
-  const createRecipe = async (e) => {
-    try {
-      e.preventDefault();
-      const obj = await axios.post(
-        "http://localhost:8080/kocima.com/api/createRecipe",
-        {
-          title: recipe.title,
-          description: recipe.description,
-          mealType: recipe.mealType,
-          ingridients: recipe.ingridients,
-          instructions: recipe.instructions,
-          servings: recipe.servings,
-          totalTime: recipe.totalTime,
-          imageURL: recipe.imageURL,
-        }
-      );
-      console.log(obj);
-    } catch (err) {
-      console.log(err);
-    }
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    createHandler(recipe);
+    setRecipe({
+      title: "",
+      description: "",
+      mealType: "",
+      ingridients: "",
+      instructions: "",
+      servings: 0,
+      totalTime: 0,
+      imageURL: "",
+    });
+    navigate("/");
   };
-
-  useEffect(() => {
-    const fetch = async () => {
-      const res = await axios.get(
-        "http://localhost:8080/kocima.com/api/recipes"
-      );
-      const datap = res.data;
-      setData(datap);
-    };
-    fetch();
-  }, []);
-  console.log(data);
 
   return (
     <div className="addRecipeSection">
@@ -100,7 +82,7 @@ function CreateRecipe() {
       </section>
 
       <section className="recipeInputSection">
-        <form onSubmit={createRecipe} className="recipeForm">
+        <form className="recipeForm" onSubmit={onHandleSubmit}>
           <label
             htmlFor="recipeName"
             className="recipeLabels
@@ -114,6 +96,7 @@ function CreateRecipe() {
             name="title"
             placeholder="e.g Grilled chicken"
             id="recipeName"
+            value={recipe.title}
             className="recipeInput"
             onChange={(e) => setRecipe({ ...recipe, title: e.target.value })}
           />
@@ -126,21 +109,26 @@ function CreateRecipe() {
           </label>
           <textarea
             name="description"
+            value={recipe.description}
             id="recipeDesc"
             className="recipeInput"
             cols="30"
             rows="10"
-            onChange={(e) => setRecipe({ ...recipe, description: e.target.value})}
+            onChange={(e) =>
+              setRecipe({ ...recipe, description: e.target.value })
+            }
           ></textarea>
           <label htmlFor="mealType" className="recipeLabels">
             Meal type
           </label>
           <select
             name="mealType"
+            value={recipe.mealType}
             id="mealTypeSelect"
             className="recipeInput"
-            onChange={(e) => setRecipe({ ...recipe, mealType: e.target.value})}
+            onChange={(e) => setRecipe({ ...recipe, mealType: e.target.value })}
           >
+            <option value="">-----</option>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>
@@ -159,10 +147,13 @@ function CreateRecipe() {
             type="number"
             placeholder="E.g 3 hours"
             required
+            value={recipe.totalTime}
             name="totalTime"
             className="recipeInput"
             id="timeInput"
-            onChange={(e) => setRecipe({ ...recipe, totalTime: e.target.value})}
+            onChange={(e) =>
+              setRecipe({ ...recipe, totalTime: e.target.value })
+            }
           />
           <label
             htmlFor="ingridients"
@@ -174,10 +165,13 @@ function CreateRecipe() {
           <textarea
             name="ingridients"
             id="ingridients"
+            value={recipe.ingridients}
             className="recipeInput"
             cols="30"
             rows="10"
-            onChange={(e) => setRecipe({ ...recipe, ingridients: e.target.value})}
+            onChange={(e) =>
+              setRecipe({ ...recipe, ingridients: e.target.value })
+            }
           ></textarea>
 
           <label
@@ -190,10 +184,13 @@ function CreateRecipe() {
           <textarea
             name="instructions"
             id="instructions"
+            value={recipe.instructions}
             className="recipeInput"
             cols="30"
-            rows="10"
-            onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value})}
+            rows="15"
+            onChange={(e) =>
+              setRecipe({ ...recipe, instructions: e.target.value })
+            }
           ></textarea>
 
           <label
@@ -206,10 +203,11 @@ function CreateRecipe() {
           <input
             type="number"
             name="servings"
+            value={recipe.servings}
             id="servingsInput"
             className="recipeInput"
             required
-            onChange={(e) => setRecipe({ ...recipe, servings: e.target.value})}
+            onChange={(e) => setRecipe({ ...recipe, servings: e.target.value })}
           />
 
           <label
@@ -222,9 +220,10 @@ function CreateRecipe() {
           <input
             type="url"
             name="imageURL"
+            value={recipe.imageURL}
             id="imgUrl"
             className="recipeInput"
-            onChange={(e) => setRecipe({ ...recipe, imageURL: e.target.value})}
+            onChange={(e) => setRecipe({ ...recipe, imageURL: e.target.value })}
           />
           <button className="submitRecipeBtn">Submit</button>
         </form>

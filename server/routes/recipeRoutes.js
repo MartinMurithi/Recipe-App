@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const { recipes, recipe, postRecipe, updateRecipe, deleteRecipe, searchRecipe } = require("../controllers/recipeController");
 
-router.get("/kocima.com/api/recipes", recipes);
-router.get("/kocima.com/api/recipe/:id", recipe);
-router.post("/kocima.com/api/createRecipe", postRecipe);
-router.put("/kocima.com/api/updateRecipe/:id", updateRecipe);
-router.delete("/kocima.com/api/deleteRecipe/:id", deleteRecipe);
-router.get("/kocima.com/api/query", searchRecipe);
+router.get("/kocima.com/api/v1/recipes", recipes);
+router.get("/kocima.com/api/v1/recipe/:id", recipe);
+router.post("/kocima.com/api/v1/createRecipe", postRecipe);
+router.put("/kocima.com/api/v1/updateRecipe/:id", updateRecipe);
+router.delete("/kocima.com/api/v1/deleteRecipe/:id", deleteRecipe);
+router.get("/kocima.com/api/v1/query", searchRecipe);
 
 module.exports = router;
