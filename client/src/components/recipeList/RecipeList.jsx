@@ -36,7 +36,7 @@ function RecipeList() {
         recipes?.data?.map((recipe) => {
           return (
             <div key={recipe._id} className="recipeList ">
-              <Link to={"/recipeDetail"} className="recipeListLink">
+              <Link to={`/recipe/${recipe._id}}`} className="recipeListLink">
                 <img
                   src={recipe.imageURL}
                   alt={recipe.title}
