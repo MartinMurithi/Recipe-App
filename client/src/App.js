@@ -7,13 +7,15 @@ import Contacts from "./pages/Contacts";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Search from './pages/Search';
+import RecipePage from './components/recipePage/RecipePage';
 function App() {
   // SIGN UP AND SIGN FORM USE THE SAME CSS
   return (
     <div className="App">
       <Nav />
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/recipe/:id' element={<RecipePage/>} />
         <Route path='/search' element={<Search/>} />
         <Route path='/addRecipe' element={<AddRecipe/> } />
         <Route path='/contacts' element={<Contacts/> } />
