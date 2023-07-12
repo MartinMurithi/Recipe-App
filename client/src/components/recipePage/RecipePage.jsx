@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import { useGetRecipeQuery } from "../../features/api/apiSlice";
 function RecipePage() {
-  const { id } = useParams();
-  console.log(id);
+  const { _id } = useParams();
 
+  const { isLoading, isSuccess, isError, error, data: recipe } = useGetRecipeQuery(_id);
+
+  if (isSuccess) {
+    console.log(recipe);
+  }
+  
   return (
     <div className="recipePage">
       <div className="recipeImg_recipeDetails">

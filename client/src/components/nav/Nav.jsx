@@ -20,7 +20,7 @@ function Nav() {
               Search
             </NavLink>
             <NavLink to={"/addRecipe"} className={"navLink"}>
-              Add Recipe
+              Create Recipe
             </NavLink>
             <NavLink to={"/contacts"} className={"navLink"}>
               Contact

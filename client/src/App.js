@@ -15,7 +15,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/recipe/:id' element={<RecipePage/>} />
+        <Route path='/recipe/:_id' element={<RecipePage/>} />
         <Route path='/search' element={<Search/>} />
         <Route path='/addRecipe' element={<AddRecipe/> } />
         <Route path='/contacts' element={<Contacts/> } />
