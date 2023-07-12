@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 
 const recipeSchema = mongoose.Schema(
   {
+    id: String,
     title: {
       type: String,
       required: true,
+      unique: true,
     },
     description: {
       type: String,
@@ -12,15 +14,15 @@ const recipeSchema = mongoose.Schema(
     },
     servings: {
       type: Number,
-      required: true
+      required: true,
     },
     totalTime: {
       type: Number,
-      required: true
+      required: true,
     },
     ingridients: {
       type: String,
-      required: [ true, "The ingridients are required" ]
+      required: [true, "The ingridients are required"],
     },
     instructions: {
       type: String,
@@ -33,7 +35,7 @@ const recipeSchema = mongoose.Schema(
     mealType: {
       type: String,
       required: true,
-    }
+    },
   },
   { timestamps: true }
 );

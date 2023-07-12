@@ -1,34 +1,39 @@
 const e = require("express");
+const { v4: uuid } = require("uuid");
 const recipeModel = require("../models/recipeModel");
+const mongoose = require("mongoose");
 
 const postRecipe = async (req, res) => {
   try {
-    const data = await recipeModel.create(req.body);
+    const id = uuid();
+    const data = await recipeModel.create({id: id, ...req.body});
     console.log(data);
     res.status(201).json(req.body);
   } catch (err) {
-    res.json({success: false, message: err})
+    res.json({ success: false, message: err.message });
   }
 };
 
 // Fetch all recipes
 const recipes = async (req, res) => {
   try {
-    const data = await recipeModel.find();
-    res.status(200).json({success:true, data: data});
+    const data = await recipeModel.find({}).sort({createdAt: - 1});
+    res.status(200).json({ success: true, data: data });
   } catch (err) {
-    res.json({success: false, message: err});
+    res.json({ success: false, message: err.message });
   }
 };
 
 // Fetch one recipe
 const recipe = async (req, res) => {
   try {
-    const { id } = req.params;
-    const data = await recipeModel.findOne({ _id: id });
-    res.status(200).json({success:true, data: data});
+    const { id: _id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`Recipe with id ${_id} does not exist`);
+    const data = await recipeModel.findById(_id);
+    console.log(typeof newId);
+    res.status(200).json({ success: true, data: data });
   } catch (err) {
-    res.json({success: false, message: err});
+    res.json({ success: false, message: err.message });
   }
 };
 
@@ -37,9 +42,9 @@ const updateRecipe = async (req, res) => {
   try {
     const { id } = req.params;
     const data = await recipeModel.findByIdAndUpdate({ _id: id }, req.body);
-    res.status(201).json({success:true, data: data});
+    res.status(201).json({ success: true, data: data });
   } catch (err) {
-    recipe.json({success: false, message: err});
+    recipe.json({ success: false, message: err.message });
   }
 };
 
@@ -50,7 +55,7 @@ const deleteRecipe = async (req, res) => {
     const data = await recipeModel.findByIdAndDelete({ _id: id });
     res.status(200).json(data);
   } catch (err) {
-    res.json({success: false, message: err});
+    res.json({ success: false, message: err.message });
   }
 };
 
@@ -69,7 +74,7 @@ const searchRecipe = async (req, res) => {
     }
     return res.status(200).json({ success: true, data: sortedRecipes });
   } catch (err) {
-    res.json({success: false, message: err});
+    res.json({ success: false, message: err.message });
   }
 };
 
