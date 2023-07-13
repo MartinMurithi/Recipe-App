@@ -12,21 +12,6 @@ function RecipeList() {
     isSuccess,
     data: recipes,
   } = useGetRecipesQuery();
-
-  // let data, newData;
-  // let content = recipes?.data?.map((ingri) => {
-  //   return (
-  //     <>
-  //       {data = ingri.instructions}
-  //       {newData = data.split('\n').map((line, index) => {
-  //         return <p key={index}>{line}<br/></p>
-  //       })}
-  //       {console.log(data)}
-  //       {console.log(newData)}
-
-  //     </>
-  //   );
-  // });
   
     console.log(recipes);
   return (
