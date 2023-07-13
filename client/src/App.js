@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Search from './pages/Search';
 import RecipePage from './components/recipePage/RecipePage';
+import SavedRecipes from './components/savedRecipes/SavedRecipes';
 function App() {
   // SIGN UP AND SIGN FORM USE THE SAME CSS
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/recipe/:_id' element={<RecipePage/>} />
         <Route path='/search' element={<Search/>} />
         <Route path='/addRecipe' element={<AddRecipe/> } />
+        <Route path='/savedRecipes' element={<SavedRecipes/> } />
         <Route path='/contacts' element={<Contacts/> } />
         <Route path='/signUp' element={<SignUp/> } />
         <Route path='/signIn' element={<SignIn/> } />

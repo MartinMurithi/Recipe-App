@@ -22,6 +22,9 @@ function Nav() {
             <NavLink to={"/addRecipe"} className={"navLink"}>
               Create Recipe
             </NavLink>
+            <NavLink to={"/savedRecipes"} className={"navLink"}>
+              Saved Recipes
+            </NavLink>
             <NavLink to={"/contacts"} className={"navLink"}>
               Contact
             </NavLink>

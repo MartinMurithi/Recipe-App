@@ -24,7 +24,7 @@
 }
 
 .recipePageDescription{
-    color: #9f9e9e;
+    color: #3d3d3d;
     font-size: 1rem;
     line-height: 24px;
     margin: 20px 0px;
@@ -55,7 +55,7 @@
 .recipeServings,
 .totalTime,
 .recipeType{
-    color: #595959;
+    color: #3d3d3d;
     font-size: .9rem;
     line-height: 21px;
     font-weight: 400;
@@ -67,6 +67,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.recipeOwner{
+    color: #EB4A36;
 }
 
 .save_print{
@@ -89,4 +93,38 @@
 .btnIcon{
     border-style: none;
     background-color: transparent;
+}
+
+.instructions_ingridients{
+    display: flex;
+    gap: 40px;
+    margin: 50px 30px;
+}
+
+.dataSection1{
+    width: 60%;
+}
+.dataSection2{
+    width: 40%;
+}
+
+.dataTitle{
+    font-size: 1.2rem;
+    line-height: 31px;
+    font-weight: 600;
+    margin: 0px 0px 15px;
+}
+
+.instructionsText{
+    color: #3d3d3d;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ingridientsText{
+    color: #3d3d3d;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
