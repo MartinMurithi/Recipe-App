@@ -37,7 +37,7 @@ function RecipeList() {
               </div>
             );
           })
-        : <h5>An error occurred</h5>}
+        : null}
     </div>
   );
 }

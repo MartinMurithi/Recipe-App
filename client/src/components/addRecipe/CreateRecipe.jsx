@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useCreateRecipeMutation } from "../../features/api/apiSlice";
 import "./CreateRecipe.css";
 
@@ -18,9 +20,23 @@ function CreateRecipe() {
 
   const [createHandler] = useCreateRecipeMutation();
 
+  const success = () => {
+    toast.success("Recipe added successfully", {
+      position: "top-center",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
   const onHandleSubmit = (e) => {
     e.preventDefault();
     createHandler(recipe);
+    
     setRecipe({
       title: "",
       description: "",
@@ -31,11 +47,13 @@ function CreateRecipe() {
       totalTime: 0,
       imageURL: "",
     });
+    success();
     navigate("/");
   };
 
   return (
     <div className="addRecipeSection">
+      
       <h3 className="pageIntro">
         Create Your <span className="pageIntroRecipe">Recipe</span>
       </h3>
@@ -98,7 +116,9 @@ function CreateRecipe() {
             id="recipeName"
             value={recipe.title}
             className="recipeInput"
-            onChange={(e) => setRecipe({ ...recipe, title: e.target.value.toLowerCase() })}
+            onChange={(e) =>
+              setRecipe({ ...recipe, title: e.target.value.toLowerCase() })
+            }
           />
           <label
             htmlFor="recipeDescription"
