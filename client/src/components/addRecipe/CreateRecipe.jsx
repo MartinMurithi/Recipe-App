@@ -98,7 +98,7 @@ function CreateRecipe() {
             id="recipeName"
             value={recipe.title}
             className="recipeInput"
-            onChange={(e) => setRecipe({ ...recipe, title: e.target.value })}
+            onChange={(e) => setRecipe({ ...recipe, title: e.target.value.toLowerCase() })}
           />
           <label
             htmlFor="recipeDescription"

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { MutatingDots } from "react-loader-spinner";
+import { ProgressBar } from "react-loader-spinner";
 import { useGetRecipeQuery } from "../../features/api/apiSlice";
 import Footer from "../footer/Footer";
 import "./RecipePage.css";
@@ -40,7 +40,7 @@ function RecipePage() {
 
   return (
     <div className="recipePage">
-      {isLoading && <MutatingDots />}
+      {isLoading && <ProgressBar/>}
       {isError && <h4 className="errorMessage">{error.message}</h4>}
       {isSuccess && (
         <>
