@@ -7,39 +7,37 @@ import "./RecipeList.css";
 function RecipeList() {
   const {
     isLoading,
+    isFetching,
     isError,
     error,
     isSuccess,
     data: recipes,
   } = useGetRecipesQuery();
-  
-    console.log(recipes);
+
+  console.log(recipes);
   return (
     <div className="recipeListSection">
-      {isLoading && <TailSpin />}
+      {isFetching && isLoading && <TailSpin />}
       {isError && <p>{error.message}</p>}
-      {isSuccess && recipes.length !== 0 ? (
-        recipes?.data?.map((recipe) => {
-          return (
-            <div key={recipe._id} className="recipeList ">
-             
-              <Link to={`/recipe/${recipe._id}`} className="recipeListLink">
-                <img
-                  src={recipe.imageURL}
-                  alt={recipe.title}
-                  width={"260"}
-                  height={"150"}
-                  className="recipeImg"
-                />
-                <p className="recipeTitle">{recipe.title}</p>
-                <p className="chef">by Chef</p>
-              </Link>
-            </div>
-          );
-        })
-      ) : (
-        <p>No recipes available</p>
-      )}
+      {isSuccess && recipes.length !== 0
+        ? recipes?.data?.map((recipe) => {
+            return (
+              <div key={recipe._id} className="recipeList ">
+                <Link to={`/recipe/${recipe._id}`} className="recipeListLink">
+                  <img
+                    src={recipe.imageURL}
+                    alt={recipe.title}
+                    width={"260"}
+                    height={"150"}
+                    className="recipeImg"
+                  />
+                  <p className="recipeTitle">{recipe.title}</p>
+                  <p className="chef">by Chef</p>
+                </Link>
+              </div>
+            );
+          })
+        : <h5>An error occurred</h5>}
     </div>
   );
 }

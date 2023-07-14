@@ -15,6 +15,10 @@ export const apiSlice = createApi({
       query: (id) => `/recipe/${id}`,
       providesTags: ["Recipes"],
     }),
+    searchRecipe: builder.query({
+      query: (recipe) => `/search?query=${recipe}`,
+      providesTags: ['Recipes']
+    }),
     createRecipe: builder.mutation({
       query: (recipe) => ({
         url: "/createRecipe",
@@ -45,6 +49,7 @@ export const apiSlice = createApi({
 export const {
   useGetRecipesQuery,
   useGetRecipeQuery,
+  useSearchRecipeQuery,
   useCreateRecipeMutation,
   useDeleteRecipeMutation,
 } = apiSlice;

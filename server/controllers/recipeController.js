@@ -1,8 +1,8 @@
-const e = require("express");
 const { v4: uuid } = require("uuid");
 const recipeModel = require("../models/recipeModel");
 const mongoose = require("mongoose");
 
+// create a recipe
 const postRecipe = async (req, res) => {
   try {
     const id = uuid();
@@ -10,7 +10,7 @@ const postRecipe = async (req, res) => {
     console.log(data);
     res.status(201).json(req.body);
   } catch (err) {
-    res.json({ success: false, message: err.message });
+    res.json({ success: false, error: err.status, message: err.message });
   }
 };
 
@@ -20,7 +20,7 @@ const recipes = async (req, res) => {
     const data = await recipeModel.find({}).sort({createdAt: - 1});
     res.status(200).json({ success: true, data: data });
   } catch (err) {
-    res.json({ success: false, message: err.message });
+    res.json({ success: false, error: err.status, message: err.message });
   }
 };
 
@@ -33,7 +33,7 @@ const recipe = async (req, res) => {
     console.log(typeof newId);
     res.status(200).json({ success: true, data: data });
   } catch (err) {
-    res.json({ success: false, message: err.message });
+    res.json({ success: false, error: err.status, message: err.message });
   }
 };
 
@@ -44,7 +44,7 @@ const updateRecipe = async (req, res) => {
     const data = await recipeModel.findByIdAndUpdate({ _id: id }, req.body);
     res.status(201).json({ success: true, data: data });
   } catch (err) {
-    recipe.json({ success: false, message: err.message });
+    recipe.json({ success: false, error: err.status, message: err.message });
   }
 };
 
@@ -55,18 +55,18 @@ const deleteRecipe = async (req, res) => {
     const data = await recipeModel.findByIdAndDelete({ _id: id });
     res.status(200).json(data);
   } catch (err) {
-    res.json({ success: false, message: err.message });
+    res.json({ success: false, error: err.status, message: err.message });
   }
 };
 
 // search for a recipe
 const searchRecipe = async (req, res) => {
   try {
-    const { search } = req.query;
-    let sortedRecipes = await recipeModel.find();
-    if (search) {
+    const { query } = req.query;
+    let sortedRecipes = await recipeModel.find({}).sort({createdAt : -1});
+    if (query) {
       sortedRecipes = sortedRecipes.filter((recipe) => {
-        return recipe.title.startsWith(search.toUpperCase());
+        return recipe.title.includes(query);
       });
     }
     if (sortedRecipes.length < 1) {
@@ -74,7 +74,7 @@ const searchRecipe = async (req, res) => {
     }
     return res.status(200).json({ success: true, data: sortedRecipes });
   } catch (err) {
-    res.json({ success: false, message: err.message });
+    res.json({ success: false, error: err.status, message: err.message });
   }
 };
 

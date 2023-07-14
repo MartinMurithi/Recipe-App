@@ -14,12 +14,10 @@ const PORT = process.env.PORT || 8500;
 dbConnect();
 
 app.use(logger);
-app.use(
-    express.urlencoded({ extended: true })
-);
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
-app.use("/", express.static(path.join(__dirname, 'public')));
+app.use("/", express.static(path.join(__dirname, "public")));
 app.use("/", router);
 
 app.all("*", (req, res) => {
@@ -37,11 +35,14 @@ app.use(errorHandler);
 
 // listen to db connection
 mongoose.connection.once("open", () => {
-    console.log("Database connected successfully");
+  console.log("Database connected successfully");
   app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 });
 
 // Listen to db error events
 mongoose.connection.on("error", (err) => {
-    logEvents(`${err.errno}\t${err.code}\t${err.syscall}\t${err.hostname}`, 'dbErrLog.log');
+  logEvents(
+    `${err.errno}\t${err.code}\t${err.syscall}\t${err.hostname}`,
+    "dbErrLog.log"
+  );
 });
