@@ -9,11 +9,13 @@ import SignIn from "./pages/SignIn";
 import Search from './pages/Search';
 import RecipePage from './components/recipePage/RecipePage';
 import SavedRecipes from './components/savedRecipes/SavedRecipes';
+import { ToastContainer } from "react-toastify";
 function App() {
   // SIGN UP AND SIGN FORM USE THE SAME CSS
   return (
     <div className="App">
       <Nav />
+      <ToastContainer />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/recipe/:_id' element={<RecipePage/>} />
