@@ -1,8 +1,11 @@
 import React from 'react'
+import Spinner from '../spinner/Spinner'
 
 function SavedRecipes() {
   return (
-    <div>SavedRecipes</div>
+    <div>SavedRecipes
+      <Spinner/>
+    </div>
   )
 }
 

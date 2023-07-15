@@ -1,7 +1,7 @@
 import React from "react";
-import { TailSpin } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import { useGetRecipesQuery } from "../../features/api/apiSlice";
+import Spinner from "../spinner/Spinner";
 import "./RecipeList.css";
 
 function RecipeList() {
@@ -17,7 +17,7 @@ function RecipeList() {
   console.log(recipes);
   return (
     <div className="recipeListSection">
-      {isFetching && isLoading && <TailSpin />}
+      {isFetching && isLoading && <Spinner />}
       {isError && <p>{error.message}</p>}
       {isSuccess && recipes.length !== 0
         ? recipes?.data?.map((recipe) => {
