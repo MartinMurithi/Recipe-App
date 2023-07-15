@@ -9,6 +9,7 @@
 }
 
 .recipeImgDetails{
+    max-width: 90%;
     height: 500px;
     width: 600px;
     border-radius: 20px;
