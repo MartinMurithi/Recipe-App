@@ -15,9 +15,11 @@ function RecipePage() {
     data: recipe,
   } = useGetRecipeQuery(_id);
 
-  // In my DB, i stored ingridients and instructions as String (I know, bad idea ). The 2 functions check for line breaks and if present, they insert a line break.
+  // In my DB, I stored ingridients and instructions as String (I know, bad idea ). The 2 functions check for line breaks and if present, they insert a line break.
 
-  let ingridients = recipe?.data.ingridients.split("\n").map((line, index) => {
+  let ingridients = recipe?.data.ingridients
+    .split("\n")
+    .map((line, index) => {
     return (
       <p key={index}>
         {line}
@@ -40,7 +42,7 @@ function RecipePage() {
 
   return (
     <div className="recipePage">
-      {isLoading && <Spinner/>}
+      {isLoading && <Spinner />}
       {isError && <h4 className="errorMessage">{error.message}</h4>}
       {isSuccess && (
         <>
@@ -114,8 +116,8 @@ function RecipePage() {
             </div>
             <div className="dataSection2">
               <h5 className="dataTitle">Ingridients</h5>
-              <p className="ingridientsText">{ingridients}</p></div>
-            
+              <p className="ingridientsText">{ingridients}</p>
+            </div>
           </div>
         </>
       )}

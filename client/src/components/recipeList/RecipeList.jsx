@@ -14,7 +14,6 @@ function RecipeList() {
     data: recipes,
   } = useGetRecipesQuery();
 
-  console.log(recipes);
   return (
     <div className="recipeListSection">
       {isFetching && isLoading && <Spinner />}
@@ -27,8 +26,8 @@ function RecipeList() {
                   <img
                     src={recipe.imageURL}
                     alt={recipe.title}
-                    width={"260"}
-                    height={"150"}
+                    width={"280"}
+                    height={"160"}
                     className="recipeImg"
                   />
                   <p className="recipeTitle">{recipe.title}</p>
