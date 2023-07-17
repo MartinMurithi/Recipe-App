@@ -7,7 +7,6 @@ const postRecipe = async (req, res) => {
   try {
     const id = uuid();
     const data = await recipeModel.create({id: id, ...req.body});
-    console.log(data);
     res.status(201).json(req.body);
   } catch (err) {
     res.json({ success: false, error: err.status, message: err.message });
@@ -30,7 +29,6 @@ const recipe = async (req, res) => {
     const { id: _id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`Recipe with id ${_id} does not exist`);
     const data = await recipeModel.findById(_id);
-    console.log(typeof newId);
     res.status(200).json({ success: true, data: data });
   } catch (err) {
     res.json({ success: false, error: err.status, message: err.message });
