@@ -17,7 +17,6 @@ const logEvents = (message, logFileName) => {
 
 const logger = (req, res, next) => {
     logEvents(`${req.method}\t${req.url}\t${req.header.origin}`, 'reqLog.log');
-    console.log(`${req.method}\t${req.url}`);
     next();
 };
 
