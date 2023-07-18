@@ -1,50 +1,165 @@
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15vh;
-    margin-bottom: -30px;
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
 }
 
-.leftSide{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 75px;
+.leftSide {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 75px;
 }
 
-.navLink{
-    text-decoration: none;
-    color: #000000;
-    padding: 0 15px;
-    font-family: sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 500;
+.navLink {
+  text-decoration: none;
+  color: #000000;
+  padding: 0 15px;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
 }
 
-.navLink:hover{
-    color: #EB4A36;
+.navLink:hover {
+  color: #eb4a36;
 }
 
-.navLink.active{
-    color: #EB4A36;
+.navLink.active {
+  color: #eb4a36;
 }
 
-.rightSide{
-    display: flex;
-    align-items: center;
-    width: 250px;
-    margin-right: -30px;
+.rightSide {
+  display: flex;
+  align-items: center;
 }
 
-.signUpBtn{
-    background-color: #EB4A36;
-    color: #fff;
-    padding: 0px 30px;
-    border-style: none;
-    border-radius: 25px;
-    font-size: 12px;
-    font-weight: 500;
+#menuIcon {
+  display: none;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+#xIcon {
+  display: none;
+}
+
+.parentModal {
+  display: none;
+}
+
+#modalNavBar {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .rightSide {
+    margin-left: auto;
+  }
+
+  .rightSide .navLink {
+    display: none;
+  }
+
+  .leftSide .navLinks {
+    display: none;
+  }
+
+  #menuIcon {
+    display: block;
+    margin: 0 15px;
     cursor: pointer;
+  }
+
+  .parentModal {
+    display: block;
+  }
+
+  #modalNavBar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    margin-top: -30px;
+  }
+
+  #modalNavBar .navLink {
+    color: #797979;
+    font-size: 1.1rem;
+    margin-top: 30px;
+  }
+  #modalNavBar .navLink:hover {
+    color: #000000;
+    text-decoration: 2px solid underline;
+  }
+
+  #modalNavBar #xIcon {
+    display: block;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #closeModalNavBar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .rightSide {
+    margin-left: auto;
+  }
+
+  /* .rightSide .navLink{
+    display: none;
+} */
+
+  .leftSide .navLinks {
+    display: none;
+  }
+
+  #menuIcon {
+    display: block;
+    margin: 0 15px;
+    cursor: pointer;
+  }
+
+  .parentModal {
+    display: block;
+  }
+
+  #modalNavBar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    margin-top: -30px;
+  }
+
+  #modalNavBar .navLink {
+    color: #797979;
+    font-size: 1.1rem;
+    margin-top: 30px;
+  }
+  #modalNavBar .navLink:hover {
+    color: #000000;
+    text-decoration: 2px solid underline;
+  }
+
+  #modalNavBar #xIcon {
+    display: block;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #closeModalNavBar {
+    display: none;
+  }
 }
