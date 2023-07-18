@@ -1,83 +1,106 @@
-footer{
-    display: flex;
-    flex-direction: column;
+footer {
+  display: flex;
+  flex-direction: column;
 }
 
-.footerSocials{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footerSocials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.footerRight{
-    font-family: cursive;
-    font-size: 28px;
-    line-height: 38px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #EB5343;
+.footerRight {
+  font-family: cursive;
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #eb5343;
 }
 
-.footerLeft{
-    margin-right: 5px;
+.footerLeft {
+  margin-right: 5px;
 }
 
-.socialIcon{
-    margin-left: 20px;
-    font-size: 1.7rem;
-    cursor: pointer;
+.socialIcon {
+  margin-left: 20px;
+  font-size: 1.7rem;
+  cursor: pointer;
 }
 
-#faceBook{
-    color: blue;
+#faceBook {
+  color: blue;
 }
-#ig{
-    color: #E05584;
+#ig {
+  color: #e05584;
 }
-#twitter{
-    color: #0EB1EF;
-}
-
-#gitHub{
-    color: black;
+#twitter {
+  color: #0eb1ef;
 }
 
-.footerLinks{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    width: 90%;
+#gitHub {
+  color: black;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 30px;
+  width: 90%;
 }
 
 .footerSectionOne,
 .footerSectionTwo,
 .footerSectionThree,
-.footerSectionFour{
+.footerSectionFour {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footerItem {
+  text-decoration: none;
+  color: #787878;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+}
+
+.authorName {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 1rem;
+  line-height: 21px;
+  font-weight: 500;
+  margin: 30px 0 50px 0;
+}
+
+.authorLink {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #4a4a4a;
+}
+
+@media screen and (max-width: 650px) {
+
+  .footerSocials {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 15px;
-}
+    margin-right: auto;
+  }
 
-.footerItem{
-    text-decoration: none;
-    color: #787878;
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 600;
-}
+  .socialIcon {
+    font-size: 1.4rem;
+    margin-left: 5px;
+  }
 
-.authorName{
-    text-decoration: none;
-    color: #4A4A4A;
-    font-size: 1rem;
-    line-height: 21px;
-    font-weight: 500;
-    margin: 30px 0 50px 0;
-}
+  .footerLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
 
-.authorLink{
-    text-decoration: none;
-    margin-left: 10px;
-    color: #4A4A4A;
 }
