@@ -5,10 +5,16 @@ import Logo from "../logo/Logo";
 
 function Nav() {
   const [showNavBar, setShowNavBar] = useState(false);
+  const [styles, setstyles] = useState("");
 
   const handleShowNavBar = () => {
     setShowNavBar((current) => !current);
   };
+
+  const handleSetStyles = () => {
+    setstyles("closeModalNavBar");
+  };
+
 
   return (
     <>
@@ -58,7 +64,7 @@ function Nav() {
           <NavLink to={"/"} className={"navLink"}>
             Home
           </NavLink>
-          <NavLink to={"/search"} className={"navLink"}>
+          <NavLink to={"/search"} className={"navLink"} onClick={handleSetStyles} style={{styles}}>
             Search
           </NavLink>
           <NavLink to={"/addRecipe"} className={"navLink"}>
