@@ -1,8 +1,19 @@
-.logo{
-    color: #EB4A36;
-    font-family: cursive;
-    font-size: 28px;
-    line-height: 38px;
-    font-weight: 400;
-    text-decoration: none;
+.logo {
+  color: #eb4a36;
+  font-family: cursive;
+  font-size: 1.2rem;
+  line-height: 38px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: .9rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1rem;
+  }
 }

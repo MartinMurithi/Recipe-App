@@ -1,43 +1,77 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-.recipeListSection{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin: 30px -15px;
+.recipeListSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-content: center;
+  margin: 30px 0;
 }
 
-.recipeList{
-    margin: 15px 12px;
+.recipeImg {
+  max-width: 100%;
 }
 
-.recipeListLink{
-    text-decoration: none;
-    color: #000;
+.recipeList {
+  margin: 15px 8px;
 }
 
-.recipeTitle{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: .8rem;
-    text-transform: capitalize;
-    line-height: 24px;
-    font-weight: 500;
-    margin-top: 6px;
+.recipeListLink {
+  text-decoration: none;
+  color: #000;
 }
 
-.recipeImg{
-    border-radius: 10px;
+.recipeTitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  line-height: 24px;
+  font-weight: 500;
+  margin-top: 6px;
 }
 
-.chef{
-    color: #797979;
-    font-weight: 500;
-    text-align: end;
-    font-size: .8rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.recipeImg {
+  border-radius: 10px;
+}
+
+.chef {
+  color: #797979;
+  font-weight: 500;
+  font-size: 0.8rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 412px) {
+  .recipeListSection {
+    grid-template-columns: 1fr;
+  }
+  .recipeImg {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 413px) and (max-width: 650px) {
+  .recipeListSection {
+    grid-template-columns: 1fr 1fr;
+  }
+  .recipeImg {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width: 800px) {
+  .recipeListSection {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .recipeImg {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .recipeListSection {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .recipeImg {
+    max-width: 100%;
+  }
 }
