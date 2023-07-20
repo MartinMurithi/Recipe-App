@@ -54,6 +54,22 @@ nav {
   height: 0px;
 }
 
+/* Media queries for menu icons */
+@media screen and (max-width: 480px) {
+  #menuIcon,
+  #modalNavBar #xIcon {
+    font-size: 0.9rem;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  #menuIcon,
+  #modalNavBar #xIcon {
+    font-size: 1rem;
+    margin-left: auto;
+  }
+}
+
 @media screen and (max-width: 650px) {
   .rightSide {
     margin-left: auto;
@@ -90,7 +106,7 @@ nav {
 
   #modalNavBar .navLink {
     color: #797979;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     margin-top: 30px;
   }
   #modalNavBar .navLink:hover {
@@ -129,6 +145,7 @@ nav {
   }
 
   #modalNavBar {
+    background-color: #fff;
     width: 100%;
     height: auto;
     display: flex;
@@ -141,7 +158,7 @@ nav {
 
   #modalNavBar .navLink {
     color: #797979;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     margin-top: 30px;
   }
   #modalNavBar .navLink:hover {

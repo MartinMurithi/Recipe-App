@@ -29,17 +29,7 @@ function SearchBar() {
           value={query}
           onChange={(e) => setQuery(e.target.value.toLowerCase())}
         />
-        {console.log(recipe)}
       </form>
-
-      {/* <div className="dropDown">
-        <label htmlFor="recipe">Sort by : </label>
-        <select name="recipe" id="recipes">
-          <option value="latest">Latest</option>
-          <option value="likes">Most liked</option>
-          <option value="save">Most saved</option>
-        </select>
-      </div> */}
 
       {/* Search results data */}
       <div className="searchData">
