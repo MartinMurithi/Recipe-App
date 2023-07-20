@@ -82,7 +82,7 @@ footer {
   color: #4a4a4a;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 550px) {
 
   .footerSocials {
     display: flex;
@@ -99,7 +99,7 @@ footer {
 
   .footerLinks {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
     gap: 15px;
   }
 
