@@ -1,62 +1,73 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.searchData{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
+.searchData {
+  display: grid;
+  gap: 20px;
+  margin: 15px;
 }
 
-.searchRecipeList{
-    margin: 10px 5px 20px 5px;
+.searchRecipeList {
+  margin: 10px 5px 20px 5px;
 }
 
-.searchForm{
-    display: flex;
-    justify-content: center;
+.searchImg {
+  max-width: 100%;
 }
 
-.searchInput{
-    width: 100%;
-    margin: 20px 35px 30px 50px;
-    padding: 15px 15px;
-    border-radius: 5px;
-    outline: transparent;
-    border-style: none;
-    background-color: #ebe6e6;
+.searchForm {
+  display: flex;
+  justify-content: center;
 }
 
-.searchInput::placeholder{
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 400;
+.searchInput {
+  width: 100%;
+  padding: 15px 15px;
+  border-radius: 5px;
+  outline: transparent;
+  border-style: none;
+  background-color: #ebe6e6;
 }
 
-.searchInput:focus{
-    border: 1px solid #000000;
-    border-radius: 30px;
-    background-color: transparent;
+.searchInput::placeholder {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
 }
 
-.dropDown{
-    background-color: #EB4A36;
-    color: whitesmoke;
-    font-size: .9rem;
-    margin: -18px 0 0 0px;
-    padding: 13px 18px;
-    border-radius: 30px;
+.searchInput:focus {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: transparent;
 }
 
-select, option{
-    background-color: #EB4A36;
-    color: whitesmoke;
-    border-style: none;
-    outline: transparent;
-    cursor: pointer;
+/* Breakpoint for 2 columns */
+@media (min-width: 480px) {
+  .searchData {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Breakpoint for 3 columns */
+@media (min-width: 750px) {
+  .searchData {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Breakpoint for 4 columns */
+@media (min-width: 992px) {
+  .searchData {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Devices with width over 1200px */
+@media (min-width: 1200px) {
+  .searchData {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

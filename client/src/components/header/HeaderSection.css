@@ -57,7 +57,7 @@ header{
   color: whitesmoke;
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
 header{
     width: 100%;
@@ -69,7 +69,7 @@ header{
   .welcomeSection {
     height: auto;
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     background-image: url("../../images/bcg-img2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -99,7 +99,7 @@ header{
   }
 
 }
-@media only screen and (max-width: 883px) {
+@media screen and (min-width: 481px) and (max-width: 883px) {
 
 header{
     width: 100%;
@@ -111,7 +111,7 @@ header{
   .welcomeSection {
     height: auto;
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     background-image: url("../../images/bcg-img2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -139,5 +139,46 @@ header{
     margin-bottom: 20px;
     font-size: 1rem;
   }
+
+}
+
+@media screen and (min-width: 885px) {
+  .welcomeDescription {
+  color: whitesmoke;
+  font-size: 3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 10px;
+  font-weight: 600;
+  display: block;
+}
+
+.welcomeHeaderText {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: whitesmoke;
+  font-size: 1.1rem;
+  line-height: 24px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.sectionSignUp {
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 300ms;
+}
+
+.sectionSignUp:hover {
+  transform: translateX(15px);
+}
+
+.signupToday {
+  text-decoration: none;
+  color: whitesmoke;
+}
 
 }

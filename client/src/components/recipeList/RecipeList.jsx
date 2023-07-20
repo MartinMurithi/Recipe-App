@@ -26,7 +26,7 @@ function RecipeList() {
                   <img
                     src={recipe.imageURL}
                     alt={recipe.title}
-                    width={"280"}
+                    width={"300"}
                     height={"160"}
                     className="recipeImg"
                   />
