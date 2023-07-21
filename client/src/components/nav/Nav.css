@@ -58,7 +58,7 @@ nav {
 @media screen and (max-width: 480px) {
   #menuIcon,
   #modalNavBar #xIcon {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-left: auto;
   }
 }
@@ -106,7 +106,7 @@ nav {
 
   #modalNavBar .navLink {
     color: #797979;
-    font-size: 0.9rem;
+    font-size: .9rem;
     margin-top: 30px;
   }
   #modalNavBar .navLink:hover {
@@ -158,7 +158,7 @@ nav {
 
   #modalNavBar .navLink {
     color: #797979;
-    font-size: 0.8rem;
+    font-size: .9rem;
     margin-top: 30px;
   }
   #modalNavBar .navLink:hover {
