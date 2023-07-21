@@ -133,7 +133,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .recipePage {
     margin-top: 8px;
   }
