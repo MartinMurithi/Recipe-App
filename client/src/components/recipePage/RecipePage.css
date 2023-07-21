@@ -1,131 +1,275 @@
-.recipePage{
-    margin-top: 60px;
+.recipePage {
+  margin-top: 60px;
 }
 
-.recipeImg_utils{
-    display: flex;
-    align-items: center;
-    gap: 40px;
+.recipeImg_utils {
+  display: flex;
+  gap: 40px;
 }
 
-.recipeImgDetails{
-    max-width: 90%;
-    height: 500px;
-    width: 600px;
-    border-radius: 20px;
+.recipeImgDetails {
+  max-width: 100%;
+  width: 400px;
+  height: 300px;
+  border-radius: 8px;
 }
 
-.recipePageTitle{
-    font-size: 2.7rem;
-    text-transform: uppercase;
-    line-height: 50px;
-    margin: 0px 0px 20px;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.recipePageTitle {
+  font-size: 2.3rem;
+  text-transform: capitalize;
+  line-height: 50px;
+  margin: 0px 0px 10px;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.recipePageDescription{
-    color: #3d3d3d;
-    font-size: 1rem;
-    line-height: 24px;
-    margin: 20px 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.recipePageDescription {
+  color: #3d3d3d;
+  font-size: 1rem;
+  line-height: 24px;
+  margin: 20px 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.recipeExtraDetails{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 15px;
+.recipeExtraDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 15px;
 }
 
-.material-icons-outlined{
-    color: #393939;
-    font-size: .9px;
-    font-weight: 400;
+.material-icons-outlined {
+  color: #393939;
+  font-size: 0.9px;
+  font-weight: 400;
 }
 
 .mealTypeTitle,
 .timeTitle,
-.yield{
-    font-size: .9rem;
-    line-height: 22px;
-    margin: 10px 0px 0px;
-    font-weight: 500;
+.yield {
+  font-size: 0.9rem;
+  line-height: 22px;
+  margin: 10px 0px 0px;
+  font-weight: 500;
 }
 
 .recipeServings,
 .totalTime,
-.recipeType{
-    color: #3d3d3d;
-    font-size: .9rem;
-    line-height: 21px;
-    font-weight: 400;
-    text-transform: capitalize;
+.recipeType {
+  color: #3d3d3d;
+  font-size: 0.9rem;
+  line-height: 21px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
-.chef_save_print{
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.chef_save_print {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.recipeOwner{
-    color: #EB4A36;
+.recipeOwner {
+  color: #eb4a36;
 }
 
-.save_print{
-    display: flex;
-    gap: 30px;
+.save_print {
+  display: flex;
+  gap: 30px;
 }
 
 .save_HoverText,
-.print_HoverText{
-    font-size: .8rem;
-    cursor: pointer;
+.print_HoverText {
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
 #saveBtn,
-#printBtn{
-    cursor: pointer;
-    font-size: 1.5rem;
+#printBtn {
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
-.btnIcon{
-    border-style: none;
-    background-color: transparent;
+.btnIcon {
+  border-style: none;
+  background-color: transparent;
 }
 
-.instructions_ingridients{
+.instructions_ingridients {
+  display: flex;
+  gap: 40px;
+  margin: 50px 30px;
+}
+
+.dataSection1 {
+  width: 60%;
+}
+.dataSection2 {
+  width: 40%;
+}
+
+.dataTitle {
+  font-size: 1.2rem;
+  line-height: 31px;
+  font-weight: 600;
+  margin: 0px 0px 15px;
+}
+
+.instructionsText {
+  color: #3d3d3d;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ingridientsText {
+  color: #3d3d3d;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 700px) {
+  .recipePage {
+    margin-top: 8px;
+  }
+  .recipeImg_utils {
     display: flex;
-    gap: 40px;
-    margin: 50px 30px;
-}
+    flex-direction: column;
+  }
 
-.dataSection1{
-    width: 60%;
-}
-.dataSection2{
-    width: 40%;
-}
+  .recipeImgDetails {
+    max-width: 100%;
+    width: 98%;
+    height: 98%;
+    object-fit: cover;
+    object-position: center;
+  }
 
-.dataTitle{
-    font-size: 1.2rem;
-    line-height: 31px;
-    font-weight: 600;
-    margin: 0px 0px 15px;
-}
+  .recipePageTitle {
+    font-size: 1.5rem;
+    margin: -25px 0 -20px 0;
+  }
 
-.instructionsText{
-    color: #3d3d3d;
+  .recipePageDescription {
     font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 0px;
+  }
+
+  .recipeExtraDetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0px -2px;
+  }
+
+  .mealTypeTitle,
+  .timeTitle,
+  .yield {
+    font-size: 0.8rem;
+    margin: 10px 0px 0px;
+  }
+
+  .recipeServings,
+  .totalTime,
+  .recipeType {
+    font-size: 0.8rem;
+  }
+
+  .chef_save_print {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .recipeChef,
+  .recipeOwner {
+    font-size: 0.8rem;
+  }
+
+  .save_print {
+    display: flex;
+    gap: 30px;
+  }
+
+  .save_HoverText,
+  .print_HoverText {
+    font-size: 0.8rem;
+  }
 }
 
-.ingridientsText{
-    color: #3d3d3d;
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* @media screen and (min-width: 581px) and (max-width: 780px) {
+  .recipePage {
+    margin-top: 8px;
+  }
+  .recipeImg_utils {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recipeImgDetails {
+    max-width: 100%;
+    width: auto;
+  }
+
+  .recipePageTitle {
+    font-size: 1.8rem;
+    margin: -25px 0 -20px 0;
+  }
+
+  .recipePageDescription {
+    font-size: 1.1rem;
+    margin: 20px 0px;
+  }
+
+  .recipeExtraDetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0px -2px;
+  }
+
+  .mealTypeTitle,
+  .timeTitle,
+  .yield {
+    font-size: 0.9rem;
+    margin: 10px 0px 0px;
+  }
+
+  .recipeServings,
+  .totalTime,
+  .recipeType {
+    font-size: 0.9rem;
+  }
+
+  .chef_save_print {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .recipeChef,
+  .recipeOwner {
+    font-size: 0.9rem;
+  }
+
+  .save_print {
+    display: flex;
+    gap: 30px;
+  }
+
+  .save_HoverText,
+  .print_HoverText {
+    font-size: 0.9rem;
+  }
+} */
