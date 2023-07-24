@@ -1,10 +1,11 @@
 .signUp_signInSection {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
-  gap: 20px;
+  gap: 0px;
 }
 
-.signUpSection {
+.signUpSection,
+.signInSection {
   width: 100%;
   margin-top: 30px;
 }
@@ -13,7 +14,10 @@
   text-align: center;
 }
 
-.createAcc {
+/* Sign Up section */
+
+.createAcc,
+.signInText {
   font-size: 1.5rem;
   line-height: 39px;
   font-weight: 600;
@@ -21,7 +25,8 @@
   margin-top: 15px;
 }
 
-.signUpForm {
+.signUpForm,
+.signInForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +44,7 @@
   width: 60%;
   border-style: none;
   border: 2px solid #eaecf0;
-  border-radius: 20px;
+  border-radius: 12px;
   outline: transparent;
   padding: 12px 5px;
   text-align: center;
@@ -50,25 +55,37 @@
   border: 2px solid #eb4a36;
 }
 
-.signUpBtn {
+.signUpBtn,
+.signInBtn {
   background-color: #eb4a36;
   display: block;
-  margin: 30px auto;
-  padding: 14px 0px;
-  width: 30%;
+  margin: 20px auto;
+  padding: 13px 0px;
+  width: 40%;
   outline: transparent;
   border-style: none;
-  border-radius: 20px;
+  border-radius: 8px;
   font-size: 0.8rem;
   cursor: pointer;
+  color: whitesmoke;
+}
+
+.signUpTextLink,
+.logInTextLink {
+  display: none;
+}
+
+.signUpText,
+.logInText {
+  display: none;
 }
 
 .terms_conditions {
   font-size: 0.9rem;
-  color: #a4a4a4;
   line-height: 21px;
   font-weight: 600;
   text-align: center;
+  color: #424242;
 }
 
 .terms {
@@ -76,7 +93,8 @@
 }
 
 /* Login Bcg Image section */
-.loginLinkSection {
+.loginLinkSection,
+.signUpLinkSection {
   width: 70%;
   height: 500px;
   display: flex;
@@ -84,40 +102,186 @@
   justify-content: center;
   align-items: center;
   margin: 40px 0 80px 0;
-  background: url("../../images/vitor-monthay-2OX0bKvL1-I-unsplash223.jpg") no-repeat;
+  background: url("../../images/vitor-monthay-2OX0bKvL1-I-unsplash223.jpg")
+    no-repeat;
   background-size: cover;
   filter: brightness(90%);
   margin-right: 30px;
   border-radius: 30px;
 }
 
-.welcomeText{
-    font-size: 1.6rem;
-    line-height: 39px;
-    font-weight: 600;
-    color: whitesmoke;
+.welcomeText {
+  font-size: 1.6rem;
+  line-height: 39px;
+  font-weight: 600;
+  color: whitesmoke;
 }
 
-.loginText{
-    color: whitesmoke;
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 24px;
-    font-weight: 600;
-    
+.loginText {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 24px;
+  font-weight: 600;
 }
 
-.signInLinkBtn{
-    margin-top: 20px;
-    padding: 10px 30px;
-    border-radius: 20px;
-    border-style: none;
-    outline: transparent;
-    cursor: pointer;
+.signInLinkBtn {
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border-style: none;
+  outline: transparent;
+  cursor: pointer;
 }
 
-.mandatory{
+.mandatory {
   color: red;
   font-weight: 500;
   font-size: 15px;
+}
+
+.loginTextLink,
+.signupTextLink {
+  display: none;
+}
+
+  @media screen and (max-width: 650px) {
+    .signUp_signInSection {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signUpSection,
+    .signInSection {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .logoComponent {
+      text-align: center;
+    }
+
+    /* Sign Up section */
+    .createAcc,
+    .signInText {
+      font-size: 1.1rem;
+    }
+
+    .signUpForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .registerLabels {
+      font-size: 0.8rem;
+    }
+
+    .registerInput {
+      width: 70%;
+    }
+
+    .registerInput,
+    input {
+      font-size: 0.8rem;
+    }
+
+    /* Login Bcg Image section */
+    .signUpLinkSection,
+    .loginLinkSection {
+      display: none;
+    }
+
+    .signUpTextLink,
+    .logInTextLink {
+      display: inline-block;
+      font-size: 0.8rem;
+      text-align: center;
+      margin: 0px 0px 5px 0px;
+    }
+
+    .signUpText,
+    .logInText {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .terms_conditions{
+      font-size: .8rem;
+    }
+  }
+
+@media screen and (min-width: 651px) and (max-width: 950px) {
+  .signUp_signInSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .signUpSection,
+  .signInSection {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .logoComponent {
+    text-align: center;
+  }
+
+  /* Sign Up section */
+  .createAcc,
+  .signInText {
+    font-size: 1.3rem;
+  }
+
+  .signUpForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .registerLabels {
+    color: #333333;
+    font-size: 0.9rem;
+    line-height: 21px;
+    font-weight: 400;
+    margin: 15px 0;
+  }
+
+  .registerInput {
+    width: 50%;
+  }
+
+  .registerInput,
+  input {
+    font-size: 0.8rem;
+  }
+
+  .registerInput:focus {
+    border: 2px solid #eb4a36;
+  }
+
+  /* Login Bcg Image section */
+  .signUpLinkSection,
+  .loginLinkSection {
+    display: none;
+  }
+
+  .signUpTextLink,
+  .logInTextLink {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0px 0px 5px 0px;
+  }
+
+  .signUpText,
+  .logInText {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .terms_conditions{
+    font-size: .9rem;
+  }
 }
