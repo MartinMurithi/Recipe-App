@@ -1,7 +1,7 @@
 .logo {
   color: #eb4a36;
   font-family: cursive;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 38px;
   font-weight: 400;
   text-decoration: none;
@@ -9,11 +9,11 @@
 
 @media screen and (max-width: 480px) {
   .logo {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 @media screen and (max-width: 768px) {
   .logo {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 }
