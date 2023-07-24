@@ -61,7 +61,7 @@ function CreateRecipe() {
         <p className="instructionTitle">
           To create a user-friendly recipe, please follow these guidelines:
         </p>
-        <ul className="instructions">
+        <ol className="instructions">
           <li className="instruction">
             Choose a concise and descriptive name for your recipe.
           </li>
@@ -96,7 +96,7 @@ function CreateRecipe() {
             By adhering to these instructions, you can ensure that your recipe
             will be easy to follow and understand.
           </li>
-        </ul>
+        </ol>
       </section>
 
       <section className="recipeInputSection">

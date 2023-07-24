@@ -1,93 +1,179 @@
-.addRecipeSection{
-    margin-top: 20px;
+.addRecipeSection {
+  margin-top: 20px;
 }
 
-.pageIntro{
-    padding: 8px 0;
-    font-size: 1.4rem;
-    font-family: Arial, Helvetica, sans-serif;
+.pageIntro {
+  padding: 8px 0;
+  font-size: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.pageIntroRecipe{
-    color: #eb4a36;
+.pageIntroRecipe {
+  color: #eb4a36;
 }
 
-.instructionsSection{
-    margin-top: 30px;
-    padding: 20px;
-    width: 70%;
-    background-color: #F8F9F9;
-    border: 1px solid #eb4a36;
-    border-radius: 10px;
+.instructionsSection {
+  margin-top: 30px;
+  padding: 20px;
+  width: 70%;
+  background-color: #f8f9f9;
+  border: 1px solid #eb4a36;
+  border-radius: 10px;
 }
 
-.instructionTitle{
-    font-size: 1rem;
+.instructionTitle {
+  font-size: 1rem;
 }
 
-.instructions{
-    margin-left: 20px;
-    font-size: .8rem;
+ol.instructions {
+  margin-left: 30px;
+  font-size: 0.9rem;
+  list-style-type: decimal;
+  margin-top: 4px;
+  line-height: 23px;
 }
 
-li{
-    margin: 8px;
+.recipeInputSection {
+  margin: 20px 0px;
 }
 
-.recipeInputSection{
-    margin: 20px 0px;
+.recipeForm {
+  background-color: #f8f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.recipeForm{
-    background-color: #F8F9F9;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.recipeLabels {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8rem;
+  margin: 10px 0 3px 0;
 }
 
-.recipeLabels{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: .8rem;
-    margin: 10px 0 3px 0;
+.recipeInput {
+  width: 70%;
+  margin-top: 3px;
 }
 
-.recipeInput{
-    width: 70%;
-    margin-top: 3px;
-}
-
-#mealTypeSelect{
-    padding: 7px 3px;
+#mealTypeSelect {
+  padding: 7px 3px;
 }
 
 #recipeName,
 #timeInput,
 #ingridientsInput,
 #servingsInput,
-#imgUrl{
+#imgUrl {
+  padding: 8px 5px;
+  margin-bottom: 5px;
+  outline: transparent;
+  border-style: none;
+  border: 1px solid #616161;
+  border-radius: 3px;
+}
+
+#instructions,
+#recipeDesc,
+#ingridients {
+  padding: 5px 10px;
+  outline: transparent;
+}
+
+.submitRecipeBtn {
+  width: 70%;
+  padding: 10px 0;
+  background-color: #eb4a36;
+  border-style: none;
+  outline: transparent;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .pageIntro {
+    font-size: 1.2rem;
+    padding: 0px;
+  }
+
+  .pageIntroRecipe {
+    color: #eb4a36;
+  }
+
+  .instructionsSection {
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .instructionTitle {
+    font-size: 0.9rem;
+  }
+
+  .instructions {
+    margin-left: 20px;
+    font-size: 0.8rem;
+  }
+
+  li {
+    margin: 8px 3px;
+  }
+
+  .recipeInputSection {
+    margin: 20px 0px;
+  }
+
+  .recipeForm {
+    background-color: #f8f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recipeInput {
+    width: 100%;
+    margin-top: 3px;
+  }
+
+  .recipeInput::placeholder {
+    font-size: 0.8rem;
+  }
+
+.recipeInput, input{
+    font-size: .8rem;
+}
+
+  .recipeLabels {
+    font-size: 0.8rem;
+  }
+
+  #mealTypeSelect {
+    padding: 7px 3px;
+  }
+
+  #recipeName,
+  #timeInput,
+  #ingridientsInput,
+  #servingsInput,
+  #imgUrl {
     padding: 8px 5px;
     margin-bottom: 5px;
     outline: transparent;
     border-style: none;
     border: 1px solid #616161;
     border-radius: 3px;
-}
+  }
 
-#instructions,
-#recipeDesc,
-#ingridients{
+  #instructions,
+  #recipeDesc,
+  #ingridients {
     padding: 5px 10px;
-    outline: transparent;   
-}
-
-.submitRecipeBtn{
-    width: 10%;
-    padding: 10px 0;
-    background-color: #eb4a36;
-    border-style: none;
     outline: transparent;
-    color: #fff;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-top: 20px;
+  }
+
+  .submitRecipeBtn {
+    width: 100%;
+    font-size: .8rem;
+  }
 }
