@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
   gap: 50px;
-  /* background-color: red; */
-  height: 70vh;
   margin: 60px 0;
 }
 
@@ -34,14 +32,14 @@
 .contactFormSection {
   width: 50%;
   background-color: #eb4a36;
-  border-radius: 30px;
+  border-radius: 12px;
   color: whitesmoke;
 }
 
 .contactForm {
   display: flex;
   flex-direction: column;
-  margin: 30px 40px;
+  margin: 30px;
 }
 
 .contactFormLabel {
@@ -54,7 +52,7 @@
 #message {
   padding: 10px 20px;
   border: 1px solid white;
-  border-radius: 10px;
+  border-radius: 4px;
   outline: transparent;
   font-size: 0.8rem;
   background-color: transparent;
@@ -64,12 +62,62 @@
 .sendMessageBtn {
   background-color: #fbc418;
   display: block;
-  margin: 20px auto;
-  padding: 8px 0px;
-  width: 30%;
+  margin: 20px auto 0px auto;
+  padding: 10px 20px;
   outline: transparent;
   border-style: none;
-  border-radius: 20px;
+  border-radius: 5px;
   font-size: 0.8rem;
   cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    height: 100%;
+    margin: -5px 0 30px 0px;
+  }
+
+  .description {
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .span {
+    font-weight: 800;
+    text-transform: capitalize;
+  }
+
+  .contact {
+    font-size: 2rem;
+    margin: 0 0 5px;
+  }
+
+  .contactDescription {
+    font-size: 0.9rem;
+  }
+
+  .contactFormSection {
+    width: 100%;
+  }
+
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+  }
+
+  .contactFormLabel {
+    font-size: 0.8rem;
+    padding: 10px 0;
+  }
+
+  #email,
+  #name,
+  #message {
+    padding: 9px 20px;
+  }
 }
