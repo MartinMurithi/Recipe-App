@@ -50,7 +50,7 @@
   }
 
   .subscriptionText {
-    text-align: center;
+    /* text-align: center; */
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 20px;
@@ -65,7 +65,6 @@
   }
 
   .emailSubscription::placeholder {
-    color: whitesmoke;
     font-size: 0.7rem;
   }
 
@@ -84,6 +83,14 @@
     border-radius: 10px;
   }
 
+  .subscriptionForm{
+    display: flex;
+    align-items: center;
+    margin: -10px 0px 20px 0px;
+    height: auto;
+
+  }
+
   .subscriptionText {
     text-align: center;
     font-size: 1rem;
@@ -95,7 +102,7 @@
   .emailSubscription {
     width: 90%;
     padding: 8px 10px;
-    margin: 0px 10px 0 10px;
+    margin: 0px 10px 0px 10px;
     border-radius: 8px;
   }
 
@@ -113,3 +120,4 @@
     margin: 10px auto 15px 10px;
   }
 }
+
