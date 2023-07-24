@@ -4,7 +4,7 @@
 
 .recipeImg_utils {
   display: flex;
-  gap: 40px;
+  gap: 50px;
 }
 
 .recipeImgDetails {
@@ -25,7 +25,7 @@
 
 .recipePageDescription {
   color: #3d3d3d;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 24px;
   margin: 20px 0px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -33,22 +33,20 @@
 
 .recipeExtraDetails {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 80px;
   margin-left: 15px;
 }
 
 .material-icons-outlined {
   color: #393939;
-  font-size: 0.9px;
   font-weight: 400;
 }
 
 .mealTypeTitle,
 .timeTitle,
 .yield {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 22px;
   margin: 10px 0px 0px;
   font-weight: 500;
@@ -84,7 +82,6 @@
 
 .save_HoverText,
 .print_HoverText {
-  font-size: 0.8rem;
   cursor: pointer;
 }
 
@@ -101,15 +98,16 @@
 
 .instructions_ingridients {
   display: flex;
-  gap: 40px;
-  margin: 50px 30px;
+  gap: 30px;
+  margin: 50px 20px 40px 0px;
+  background-color: #fbfbfb;
 }
 
 .dataSection1 {
-  width: 60%;
+  width: 40%;
 }
 .dataSection2 {
-  width: 40%;
+  width: 60%;
 }
 
 .dataTitle {
@@ -119,15 +117,21 @@
   margin: 0px 0px 15px;
 }
 
+ul,
+ol {
+  list-style-type: none;
+  margin-left: 10px;
+}
+
 .instructionsText {
-  color: #3d3d3d;
+  color: #161616;
   font-size: 1rem;
   font-weight: 400;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .ingridientsText {
-  color: #3d3d3d;
+  color: #161616;
   font-size: 1rem;
   font-weight: 400;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -151,33 +155,33 @@
   }
 
   .recipePageTitle {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin: -25px 0 -20px 0;
   }
 
   .recipePageDescription {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 20px 0px;
   }
 
   .recipeExtraDetails {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 60px;
     margin: 0px -2px;
   }
 
   .mealTypeTitle,
   .timeTitle,
   .yield {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 10px 0px 0px;
   }
 
   .recipeServings,
   .totalTime,
   .recipeType {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .chef_save_print {
@@ -191,7 +195,7 @@
 
   .recipeChef,
   .recipeOwner {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .save_print {
@@ -202,6 +206,25 @@
   .save_HoverText,
   .print_HoverText {
     font-size: 0.8rem;
+  }
+
+  .instructions_ingridients {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0px;
+  }
+
+  .dataSection1 {
+    width: 100%;
+  }
+  .dataSection2 {
+    width: 100%;
+  }
+
+  .dataTitle {
+    font-size: 1.1rem;
+    margin: 0px 0px 5px;
   }
 }
 

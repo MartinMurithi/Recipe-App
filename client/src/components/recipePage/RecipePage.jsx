@@ -21,22 +21,22 @@ function RecipePage() {
     .split("\n")
     .map((line, index) => {
     return (
-      <p key={index}>
+      <li key={index}>
         {line}
         <br />
         <br />
-      </p>
+      </li>
     );
   });
   let instructions = recipe?.data.instructions
     .split("\n")
     .map((line, index) => {
       return (
-        <p key={index}>
+        <li key={index}>
           {line}
           <br />
           <br />
-        </p>
+        </li>
       );
     });
 
@@ -54,9 +54,7 @@ function RecipePage() {
             />
             <div className="recipeDetails">
               <p className="recipePageTitle">{recipe?.data?.title}</p>
-              <p className="recipePageDescription">
-                {recipe?.data?.description}
-              </p>
+              <p className="recipePageDescription">{recipe?.data?.description}</p>
 
               <div className="recipeExtraDetails">
                 <div className="type">
@@ -111,12 +109,12 @@ function RecipePage() {
 
           <div className="instructions_ingridients">
             <div className="dataSection1">
-              <h5 className="dataTitle">How To Make It</h5>
-              <p className="instructionsText">{instructions}</p>
+              <h5 className="dataTitle">Ingridients</h5>
+              <ul className="ingridientsText">{ingridients}</ul>
             </div>
             <div className="dataSection2">
-              <h5 className="dataTitle">Ingridients</h5>
-              <p className="ingridientsText">{ingridients}</p>
+              <h5 className="dataTitle">Instructions</h5>
+              <ol className="instructionsText">{instructions}</ol>
             </div>
           </div>
         </>
