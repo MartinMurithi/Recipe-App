@@ -11,7 +11,7 @@ function SearchBar() {
     error,
     isSuccess,
     data: recipe,
-    refetch,
+    refetch
   } = useSearchRecipeQuery(query, { enabled: false });
 
   const handleSubmit = (e) => {

@@ -7,7 +7,7 @@ const postRecipe = async (req, res) => {
   try {
     const id = uuid();
     const data = await recipeModel.create({id: id, ...req.body});
-    res.status(201).json(req.body);
+    res.status(201).json(data);
   } catch (err) {
     res.json({ success: false, error: err.status, message: err.message });
   }
