@@ -5,7 +5,8 @@ import Spinner from "../spinner/Spinner";
 import "./RecipeList.css";
 
 function RecipeList() {
-  const {
+  
+   const {
     isLoading,
     isFetching,
     isError,

@@ -47,8 +47,9 @@ function CreateRecipe() {
       totalTime: 0,
       imageURL: "",
     });
-    success();
     navigate("/");
+    // success();
+    
   };
 
   return (
