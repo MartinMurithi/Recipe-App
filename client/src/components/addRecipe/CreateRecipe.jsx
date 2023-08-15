@@ -48,7 +48,7 @@ function CreateRecipe() {
       imageURL: "",
     });
     navigate("/");
-    // success();
+    success();
     
   };
 
