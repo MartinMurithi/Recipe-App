@@ -78,12 +78,12 @@ function RecipePage() {
                 </div>
               </div>
 
-              <div className="chef_save_print">
+              {/* <div className="chef_save_print">
                 <p className="recipeChef">
                   Created by <span className="recipeOwner">Chef</span>
                 </p>
 
-                <div className="save_print">
+                {/* <div className="save_print">
                   <div className="save">
                     <button className="btnIcon">
                       <span className="material-icons-outlined" id="saveBtn">
@@ -102,8 +102,8 @@ function RecipePage() {
 
                     <p className="print_HoverText">Print</p>
                   </div>
-                </div>
-              </div>
+                </div> 
+              </div> */}
             </div>
           </div>
 

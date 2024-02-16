@@ -18,43 +18,51 @@ function CreateRecipe() {
     imageURL: "",
   });
 
-  const [createHandler] = useCreateRecipeMutation();
+  const [createHandler, { isLoading, isSuccess, isError, error }] =
+    useCreateRecipeMutation();
 
-  const success = () => {
-    toast.success("Recipe added successfully", {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  };
-
-  const onHandleSubmit = (e) => {
+  const onHandleSubmit = async (e) => {
     e.preventDefault();
-    createHandler(recipe);
-    
-    setRecipe({
-      title: "",
-      description: "",
-      mealType: "",
-      ingridients: "",
-      instructions: "",
-      servings: 0,
-      totalTime: 0,
-      imageURL: "",
-    });
-    navigate("/");
-    success();
-    
+    try {
+      await createHandler(recipe);
+
+      navigate("/");
+      toast.success("Recipe added successfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setRecipe({
+        title: "",
+        description: "",
+        mealType: "",
+        ingridients: "",
+        instructions: "",
+        servings: 0,
+        totalTime: 0,
+        imageURL: "",
+      });
+    } catch (err) {
+      toast.error(err.message, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   return (
     <div className="addRecipeSection">
-      
       <h3 className="pageIntro">
         Create Your <span className="pageIntroRecipe">Recipe</span>
       </h3>
@@ -246,7 +254,10 @@ function CreateRecipe() {
             className="recipeInput"
             onChange={(e) => setRecipe({ ...recipe, imageURL: e.target.value })}
           />
-          <button className="submitRecipeBtn">Submit</button>
+          {isError ? <p>{error.message}</p> : null}
+          <button className="submitRecipeBtn">
+            {isLoading ? "Submitting..." : "Submit"}
+          </button>
         </form>
       </section>
     </div>

@@ -27,17 +27,17 @@ function RecipeList() {
                   <img
                     src={recipe.imageURL}
                     alt={recipe.title}
-                    width={"300"}
-                    height={"160"}
+                    width={"260"}
+                    height={"180"}
                     className="recipeImg"
                   />
                   <p className="recipeTitle">{recipe.title}</p>
-                  <p className="chef">by Chef</p>
+                  {/* <p className="chef">by Chef</p> */}
                 </Link>
               </div>
             );
           })
-        : null}
+        : <p>No recipes available at the moment</p>}
     </div>
   );
 }

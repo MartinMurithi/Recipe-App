@@ -9,26 +9,26 @@
 
 .recipeImgDetails {
   max-width: 100%;
-  width: 400px;
+  width: 650px;
   height: 300px;
   border-radius: 8px;
 }
 
 .recipePageTitle {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   text-transform: capitalize;
   line-height: 50px;
   margin: 0px 0px 10px;
   font-weight: 600;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .recipePageDescription {
   color: #3d3d3d;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 24px;
-  margin: 20px 0px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px 0px 30px 0;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .recipeExtraDetails {
@@ -49,14 +49,14 @@
   font-size: 1rem;
   line-height: 22px;
   margin: 10px 0px 0px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .recipeServings,
 .totalTime,
 .recipeType {
   color: #3d3d3d;
-  font-size: 0.9rem;
+  font-size: .9rem;
   line-height: 21px;
   font-weight: 400;
   text-transform: capitalize;

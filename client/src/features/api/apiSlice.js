@@ -5,6 +5,7 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:8080/kocima.com/api/v1",
   }),
+  // credentials: true,
   tagTypes: ["Recipeszz"],
   endpoints: (builder) => ({
     getRecipes: builder.query({
@@ -17,7 +18,7 @@ export const apiSlice = createApi({
     }),
     searchRecipe: builder.query({
       query: (recipe) => `/search?query=${recipe}`,
-      providesTags: ['Recipes']
+      providesTags: ["Recipes"],
     }),
     createRecipe: builder.mutation({
       query: (recipe) => ({

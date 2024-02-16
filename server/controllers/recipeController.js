@@ -1,4 +1,5 @@
 const { v4: uuid } = require("uuid");
+const { request, response } = require("express");
 const recipeModel = require("../models/recipeModel");
 const mongoose = require("mongoose");
 
@@ -7,6 +8,7 @@ const postRecipe = async (req, res) => {
   try {
     const id = uuid();
     const data = await recipeModel.create({id: id, ...req.body});
+    console.log(data);
     res.status(201).json(data);
   } catch (err) {
     res.json({ success: false, error: err.status, message: err.message });
@@ -16,10 +18,14 @@ const postRecipe = async (req, res) => {
 // Fetch all recipes
 const recipes = async (req, res) => {
   try {
+    console.log("Req: "+req);
+    console.log("Res: " +res);
     const data = await recipeModel.find({}).sort({createdAt: - 1});
-    res.status(200).json({ success: true, data: data });
+    console.log(data);
+    return res.status(200).json({ success: true, data: data });
   } catch (err) {
-    res.json({ success: false, error: err.status, message: err.message });
+    console.log(err.message);
+    return res.status(500).json({ success: false, error: err.status, message: err.message });
   }
 };
 

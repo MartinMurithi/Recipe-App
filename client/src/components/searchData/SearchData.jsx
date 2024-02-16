@@ -47,7 +47,7 @@ function SearchBar() {
                     className="recipeImg"
                   />
                   <p className="recipeTitle">{recipe.title}</p>
-                  <p className="chef">by Chef</p>
+                  {/* <p className="chef">by Chef</p> */}
                 </Link>
               </div>
             );
