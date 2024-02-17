@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSearchRecipeQuery } from "../../features/api/apiSlice";
 import "./SearchData.css";
 import RecipeList from "../recipeList/RecipeList";
+import "../recipeList/RecipeList"
 
 function SearchBar() {
   const [query, setQuery] = useState("");

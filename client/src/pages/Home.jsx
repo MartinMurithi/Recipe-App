@@ -1,16 +1,10 @@
 import React from 'react'
-import HeaderSection from '../components/header/HeaderSection';
-import Subscription from '../components/subscription/Subscription';
-import Footer from '../components/footer/Footer';
-import RecipeList from '../components/recipeList/RecipeList';
+import SearchBar from '../components/searchData/SearchData';
 
 function Home() {
   return (
     <div>
-      <HeaderSection />
-      <RecipeList/>
-      <Subscription />
-      <Footer/>
+      <SearchBar />
     </div>
   )
 }

@@ -11,11 +11,20 @@ function Nav() {
   };
 
   return (
-    <>
-      <nav>
-        <div className="leftSide">
-          <Logo />
-          <div className="navLinks">
+    <nav>
+      <Logo />
+    </nav>
+  );
+}
+
+export default Nav;
+
+{
+  /* <div className="leftSide"> */
+}
+
+{
+  /* <div className="navLinks">
             <NavLink to={"/"} className={"navLink"}>
               Home
             </NavLink>
@@ -35,7 +44,7 @@ function Nav() {
         </div>
 
         <div className="rightSide">
-           <NavLink to={"/signIn"} className={"navLink"} id="signInLink" >
+          <NavLink to={"/signIn"} className={"navLink"} id="signInLink">
             Sign In
           </NavLink>
           <NavLink to={"/signUp"} className={"navLink"} id="signUpLink">
@@ -48,9 +57,11 @@ function Nav() {
           >
             {showNavBar ? "X" : "menu"}
           </span>
-        </div>
-      </nav>
-      <div className="parentModal">
+        </div> */
+}
+
+{
+  /* <div className="parentModal">
         <div
           className="modalNavBar"
           id={showNavBar ? "modalNavBar" : "closeModalNavBar"}
@@ -58,7 +69,7 @@ function Nav() {
           <NavLink to={"/"} className={"navLink"}>
             Home
           </NavLink>
-          <NavLink to={"/search"} className={"navLink"} >
+          <NavLink to={"/search"} className={"navLink"}>
             Search
           </NavLink>
           <NavLink to={"/addRecipe"} className={"navLink"}>
@@ -77,9 +88,5 @@ function Nav() {
             Sign Up
           </NavLink>
         </div>
-      </div>
-    </>
-  );
+      </div> */
 }
-
-export default Nav;
