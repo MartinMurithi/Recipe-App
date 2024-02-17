@@ -3,6 +3,7 @@ import { useSearchRecipeQuery } from "../../features/api/apiSlice";
 import "./SearchData.css";
 import RecipeList from "./RecipeList";
 import RecipeCard from "../recipe card/RecipeCard";
+import Category from "../category/Category";
 
 function SearchBar() {
   const [query, setQuery] = useState("");
@@ -30,6 +31,8 @@ function SearchBar() {
           onChange={(e) => setQuery(e.target.value.toLowerCase())}
         />
       </form>
+
+      <Category />
 
       {/* Search results data */}
       <div className="recipeListSection">
