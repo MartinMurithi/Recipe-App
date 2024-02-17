@@ -8,15 +8,6 @@
   margin: 30px auto;
 }
 
-.searchRecipeList {
-  margin: 15px 0;
-  padding: 0;
-}
-
-.searchImg {
-  max-width: 100%;
-}
-
 .searchForm {
   display: flex;
   justify-content: center;

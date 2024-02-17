@@ -1,20 +1,29 @@
-.recipeListLink {
-  text-decoration: none;
-  color: #000;
-  padding: 0;
-  margin: 0;
+.recipeCard {
+  width: 250px;
 }
 
-.recipeTitle {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: .9rem;
-  text-transform: capitalize;
-  font-weight: 500;
-  margin: 5px 0 0 5px;
+.recipeLink {
+  text-decoration: none;
+  color: inherit;
+}
 
+.imageCard {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .recipeImg {
   border-radius: 10px;
-  max-width: 100%;
+}
+
+.recipeTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  font-size: .9rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin: 5px 0 0 5px;
 }

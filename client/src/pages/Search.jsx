@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchData from '../components/searchData/SearchData';
+import SearchData from '../components/recipeList/SearchData';
 import Footer from '../components/footer/Footer';
 
 function Search() {

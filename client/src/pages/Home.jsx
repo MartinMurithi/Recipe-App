@@ -1,10 +1,11 @@
 import React from 'react'
-import SearchBar from '../components/searchData/SearchData';
+import SearchData from '../components/recipeList/SearchData';
 
 function Home() {
   return (
     <div>
-      <SearchBar />
+      {/* <SearchBar /> */}
+      <SearchData />
     </div>
   )
 }

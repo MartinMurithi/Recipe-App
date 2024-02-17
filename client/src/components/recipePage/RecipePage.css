@@ -1,26 +1,35 @@
 .recipePage {
-  margin-top: 60px;
+  width: 85%;
+  margin: 60px auto 0 auto;
 }
 
 .recipeImg_utils {
   display: flex;
+  align-items: center;
+  width: 100%;
   gap: 50px;
 }
 
 .recipeImgDetails {
-  max-width: 100%;
-  width: 650px;
-  height: 300px;
-  border-radius: 8px;
+  width: 360px;
+  height: 270px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.recipeDetails {
+  width: 80%;
 }
 
 .recipePageTitle {
-  font-size: 2.2rem;
+  font-size: 2rem;
   text-transform: capitalize;
   line-height: 50px;
   margin: 0px 0px 10px;
   font-weight: 600;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .recipePageDescription {
@@ -28,7 +37,7 @@
   font-size: 1rem;
   line-height: 24px;
   margin: 10px 0px 30px 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .recipeExtraDetails {
@@ -56,10 +65,11 @@
 .totalTime,
 .recipeType {
   color: #3d3d3d;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 21px;
   font-weight: 400;
   text-transform: capitalize;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .chef_save_print {
@@ -83,17 +93,6 @@
 .save_HoverText,
 .print_HoverText {
   cursor: pointer;
-}
-
-#saveBtn,
-#printBtn {
-  cursor: pointer;
-  font-size: 1.5rem;
-}
-
-.btnIcon {
-  border-style: none;
-  background-color: transparent;
 }
 
 .instructions_ingridients {
@@ -127,14 +126,15 @@ ol {
   color: #161616;
   font-size: 1rem;
   font-weight: 400;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 20px;
 }
 
 .ingridientsText {
   color: #161616;
   font-size: 1rem;
   font-weight: 400;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 @media screen and (max-width: 800px) {

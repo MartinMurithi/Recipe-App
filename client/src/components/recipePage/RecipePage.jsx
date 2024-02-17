@@ -17,9 +17,7 @@ function RecipePage() {
 
   // In my DB, I stored ingridients and instructions as String (I know, bad idea ). The 2 functions check for line breaks and if present, they insert a line break.
 
-  let ingridients = recipe?.data.ingridients
-    .split("\n")
-    .map((line, index) => {
+  let ingridients = recipe?.data.ingridients.split("\n").map((line, index) => {
     return (
       <li key={index}>
         {line}
@@ -47,14 +45,19 @@ function RecipePage() {
       {isSuccess && (
         <>
           <div className="recipeImg_utils">
-            <img
-              src={recipe?.data?.imageURL}
-              alt={recipe?.data?.title}
-              className="recipeImgDetails"
-            />
+              <img
+                src={recipe?.data?.imageURL}
+                alt={recipe?.data?.title}
+                width="700px"
+                height="400px"
+                className="recipeImgDetails"
+              />
+
             <div className="recipeDetails">
               <p className="recipePageTitle">{recipe?.data?.title}</p>
-              <p className="recipePageDescription">{recipe?.data?.description}</p>
+              <p className="recipePageDescription">
+                {recipe?.data?.description}
+              </p>
 
               <div className="recipeExtraDetails">
                 <div className="type">

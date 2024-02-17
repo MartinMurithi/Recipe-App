@@ -5,18 +5,18 @@ import "./RecipeCard.css";
 
 function RecipeCard({ recipe }) {
   return (
-    <div>
-      <Link to={`/recipe/${recipe._id}`} className="recipeListLink">
+    <div className="recipeCard">
+      <Link to={`/recipe/${recipe._id}`} className="recipeLink">
         <div className="imageCard">
           <img
             src={recipe.imageURL}
             alt={recipe.title}
-            width="260px"
-            height="180px"
+            width="240px"
+            height="190px"
             className="recipeImg"
           />
-          <p className="recipeTitle">{recipe.title}</p>
         </div>
+        <p className="recipeTitle">{recipe.title}</p>
       </Link>
     </div>
   );
