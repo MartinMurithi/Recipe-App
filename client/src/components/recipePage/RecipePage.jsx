@@ -122,7 +122,7 @@ function RecipePage() {
           </div>
         </>
       )}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

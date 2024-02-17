@@ -6,7 +6,7 @@ export const apiSlice = createApi({
     baseUrl: "http://localhost:8080/kocima.com/api/v1",
   }),
   // credentials: true,
-  tagTypes: ["Recipeszz"],
+  tagTypes: ["Recipes"],
   endpoints: (builder) => ({
     getRecipes: builder.query({
       query: () => "/recipes",
@@ -22,7 +22,7 @@ export const apiSlice = createApi({
     }),
     createRecipe: builder.mutation({
       query: (recipe) => ({
-        url: "/createRecipe",
+        url: "/add-recipe",
         method: "POST",
         body: recipe,
       }),

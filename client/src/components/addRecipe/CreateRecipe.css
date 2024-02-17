@@ -1,5 +1,6 @@
 .addRecipeSection {
-  margin-top: 20px;
+  width: 85%;
+  margin: 20px auto 20px auto;
 }
 
 .pageIntro {

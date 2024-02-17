@@ -1,7 +1,4 @@
 const Router= require("express")
-const { request, response } = require("express");
-const recipeModel = require("../models/recipeModel");
-
 const router = Router();
 const controller = require("../controllers/recipeController");
 
@@ -23,7 +20,7 @@ const controller = require("../controllers/recipeController");
 // console.log(response);
 router.get("/recipes", controller.recipes);
 router.get("/recipe/:id", controller.recipe);
-router.post("/createRecipe", controller.postRecipe);
+router.post("/add-recipe", controller.postRecipe);
 router.put("/updateRecipe/:id", controller.updateRecipe);
 router.delete("/deleteRecipe/:id", controller.deleteRecipe);
 router.get("/search", controller.searchRecipe);
