@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../recipeList/RecipeList.css";
 import "./RecipeCard.css";
 
 function RecipeCard({ recipe }) {
