@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:8080/kocima.com/api/v1",
+    baseUrl: "https://kocima-api.onrender.com",
   }),
   // credentials: true,
   tagTypes: ["Recipes"],

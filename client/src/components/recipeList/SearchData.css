@@ -49,7 +49,21 @@
 }
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 500px) {
+  div.searchForm{
+    width: 100%;
+  }
+
+  .searchInput{
+    width: 100%;
+  }
+
+  div.recipeListSection {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;}
+}
+
+@media only screen and (max-width: 1000px) {
   .searchForm{
     width: 100%;
   }
@@ -59,6 +73,6 @@
   }
 
   .recipeListSection {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;}
 }
