@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "../spinner/Spinner";
 import { useGetRecipeQuery } from "../../features/api/apiSlice";
-import Footer from "../footer/Footer";
 import "./RecipePage.css";
 function RecipePage() {
   const { _id } = useParams();
@@ -122,7 +121,6 @@ function RecipePage() {
           </div>
         </>
       )}
-      {/* <Footer /> */}
     </div>
   );
 }

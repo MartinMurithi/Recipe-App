@@ -38,7 +38,10 @@ function SearchBar() {
 
   return (
     <div className="search_sort">
-      <form className="searchForm" onSubmit={handleSubmit}>
+      <form
+        className={`searchForm`}
+        onSubmit={handleSubmit}
+      >
         <input
           type="search"
           placeholder="Search for recipes..."
@@ -50,7 +53,7 @@ function SearchBar() {
       <Category handleFilter={handleFilter} />
 
       {/* Search results data */}
-      <div className="recipeListSection">
+      <div className={`recipeListSection `}>
         {isError && <h5>{error.message}</h5>}
         {isLoading && <Spinner />}
         {isSuccess && recipes?.length !== 0
@@ -61,6 +64,31 @@ function SearchBar() {
             recipes.length === 0 && <p>No recipes found for "{query}"</p>}
       </div>
     </div>
+
+    // <div className="search_sort">
+    //   <form className="searchForm" onSubmit={handleSubmit}>
+    //     <input
+    //       type="search"
+    //       placeholder="Search for recipes..."
+    //       className="searchInput"
+    //       value={query}
+    //       onChange={(e) => setQuery(e.target.value.toLowerCase())}
+    //     />
+    //   </form>
+    //   <Category handleFilter={handleFilter} />
+
+    //   {/* Search results data */}
+    //   <div className="recipeListSection">
+    //     {isError && <h5>{error.message}</h5>}
+    //     {isLoading && <Spinner />}
+    //     {isSuccess && recipes?.length !== 0
+    //       ? filteredRecipes?.map((recipe) => (
+    //           <RecipeCard recipe={recipe} key={recipe._id} />
+    //         ))
+    //       : isSuccess &&
+    //         recipes.length === 0 && <p>No recipes found for "{query}"</p>}
+    //   </div>
+    // </div>
   );
 }
 
