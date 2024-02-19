@@ -1,5 +1,4 @@
 .categorySection {
-  /* background-color: red; */
   width: 50%;
   margin: 20px auto;
   display: flex;
@@ -16,8 +15,20 @@
   border-radius: 3px;
   cursor: pointer;
   padding: 6px 10px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #161616;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   text-transform: capitalize;
+}
+
+@media only screen and (max-width: 768px) {
+  .categorySection {
+    width: 100%;
+    padding-bottom: 1px;
+    overflow: scroll;
+  }
+
+  .categoryBtn {
+    border: none;
+  }
 }

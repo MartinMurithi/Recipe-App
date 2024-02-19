@@ -1,3 +1,4 @@
+
 .recipeCard {
   width: 250px;
 }
@@ -22,41 +23,24 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-family: "Times New Roman", Times, serif;
-  font-size: .9rem;
   text-transform: capitalize;
   font-weight: 500;
   margin: 5px 0 0 5px;
 }
 
-/* @media only screen and (max-width:768px){
+@media only screen and (max-width: 768px) {
   .recipeCard {
-  width: 100px;
-}
+    width: 170px;
+  }
 
-.recipeLink {
-  text-decoration: none;
-  color: inherit;
-}
+  .imageCard {
+    width: 100%;
+  }
 
-.imageCard {
-  max-width: 90%;
-  object-fit: cover;
-  object-position: center;
-}
+  .recipeImg {
+    max-width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
 
-.recipeImg {
-  border-radius: 10px;
 }
-
-.recipeTitle {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-family: "Times New Roman", Times, serif;
-  font-size: .9rem;
-  text-transform: capitalize;
-  font-weight: 500;
-  margin: 5px 0 0 5px;
-}
-
-} */

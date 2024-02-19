@@ -7,7 +7,6 @@
 .search_sort{
   width: 80%;
   margin: 0 auto;
-  /* background-color: rebeccapurple; */
 }
 
 .searchForm {
@@ -55,9 +54,11 @@
     width: 100%;
   }
 
+  .searchInput{
+    width: 100%;
+  }
+
   .recipeListSection {
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    background-color: #eb4a36;
-  }
+    width: 100%;}
 }
