@@ -7,25 +7,28 @@ const mongoose = require("mongoose");
 const postRecipe = async (req, res) => {
   try {
     const id = uuid();
-    const data = await recipeModel.create({id: id, ...req.body});
+    const data = await recipeModel.create({ id: id, ...req.body });
     console.log(data);
-    res.status(201).json(data);
+    return res.status(201).json(data);
   } catch (err) {
-    res.json({ success: false, error: err.status, message: err.message });
+    return res.json({
+      success: false,
+      error: err.status,
+      message: err.message,
+    });
   }
 };
 
 // Fetch all recipes
-const recipes = async (req, res) => {
+const recipes = async (req, response) => {
   try {
-    console.log("Req: "+req);
-    console.log("Res: " +res);
-    const data = await recipeModel.find({}).sort({createdAt: - 1});
-    console.log(data);
-    return res.status(200).json({ success: true, data: data });
+    const data = await recipeModel.find({}).sort({ createdAt: -1 });
+    return response?.status(200)?.json({ success: true, data: data });
   } catch (err) {
     console.log(err.message);
-    return res.status(500).json({ success: false, error: err.status, message: err.message });
+    return res
+      .status(500)
+      .json({ success: false, error: err.status, message: err.message });
   }
 };
 
@@ -33,22 +36,16 @@ const recipes = async (req, res) => {
 const recipe = async (req, res) => {
   try {
     const { id: _id } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`Recipe with id ${_id} does not exist`);
+    if (!mongoose.Types.ObjectId.isValid(_id))
+      return res.status(404).send(`Recipe with id ${_id} does not exist`);
     const data = await recipeModel.findById(_id);
-    res.status(200).json({ success: true, data: data });
+    return res.status(200).json({ success: true, data: data });
   } catch (err) {
-    res.json({ success: false, error: err.status, message: err.message });
-  }
-};
-
-// Update a recipe
-const updateRecipe = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const data = await recipeModel.findByIdAndUpdate({ _id: id }, req.body);
-    res.status(201).json({ success: true, data: data });
-  } catch (err) {
-    recipe.json({ success: false, error: err.status, message: err.message });
+    return res.json({
+      success: false,
+      error: err.status,
+      message: err.message,
+    });
   }
 };
 
@@ -67,18 +64,24 @@ const deleteRecipe = async (req, res) => {
 const searchRecipe = async (req, res) => {
   try {
     const { query } = req.query;
-    let sortedRecipes = await recipeModel.find({}).sort({createdAt : -1});
+    let sortedRecipes = await recipeModel.find({}).sort({ createdAt: -1 });
     if (query) {
       sortedRecipes = sortedRecipes.filter((recipe) => {
         return recipe.title.includes(query);
       });
     }
-    if (sortedRecipes.length < 1) {
-      return res.status(200).json({ success: true, data: [] });
+    if (sortedRecipes.length === 0) {
+      return res
+        .status(200)
+        .json({ success: true, message: "No recipes Found", data: [] });
     }
     return res.status(200).json({ success: true, data: sortedRecipes });
   } catch (err) {
-    res.json({ success: false, error: err.status, message: err.message });
+    return res.json({
+      success: false,
+      error: err.status,
+      message: err.message,
+    });
   }
 };
 
@@ -86,7 +89,6 @@ module.exports = {
   postRecipe,
   recipes,
   recipe,
-  updateRecipe,
   deleteRecipe,
   searchRecipe,
 };

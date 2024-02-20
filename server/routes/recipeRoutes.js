@@ -21,8 +21,7 @@ const controller = require("../controllers/recipeController");
 router.get("/recipes", controller.recipes);
 router.get("/recipe/:id", controller.recipe);
 router.post("/add-recipe", controller.postRecipe);
-router.put("/updateRecipe/:id", controller.updateRecipe);
-router.delete("/deleteRecipe/:id", controller.deleteRecipe);
+// router.delete("/deleteRecipe/:id", controller.deleteRecipe);
 router.get("/search", controller.searchRecipe);
 
 module.exports = router;
